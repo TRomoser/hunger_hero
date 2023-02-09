@@ -1,12 +1,19 @@
 import { Component } from 'react';
 import { signUp } from '../../utilities/users-service';
 
+const UserTypes = {
+  Hungry: "Hungry",
+  Hero: "Hero"
+}
+
 export default class SignUpForm extends Component {
+
   state = {
     name: '',
     email: '',
     password: '',
     confirm: '',
+    userType: UserTypes.Hero,
     error: ''
   };
 
@@ -18,10 +25,11 @@ export default class SignUpForm extends Component {
   };
 
   handleSubmit = async (evt) => {
+    console.log(this.state, "THIS IS THE STATE")
     evt.preventDefault();
     try {
-      const {name, email, password} = this.state;
-      const formData = {name, email, password};
+      const {name, email, password, userType} = this.state;
+      const formData = {name, email, password, userType};
       // The promise returned by the signUp service
       // method will resolve to the user object included
       // in the payload of the JSON Web Token (JWT)
@@ -44,6 +52,11 @@ export default class SignUpForm extends Component {
             <input type="text" name="name" value={this.state.name} onChange={this.handleChange} required />
             <label>Email</label>
             <input type="email" name="email" value={this.state.email} onChange={this.handleChange} required />
+            <label>Type</label>
+            <select type="userType" name="userType" onChange={this.handleChange} required>
+              <option value={UserTypes.Hungry}>Hungry</option>
+              <option value={UserTypes.Hero}>Hero</option>
+              </select>
             <label>Password</label>
             <input type="password" name="password" value={this.state.password} onChange={this.handleChange} required />
             <label>Confirm</label>
