@@ -16,7 +16,8 @@ const userSchema = new Schema({
   password: {
     type: String,
     required: true
-  }
+  },
+  userType: {type: String, enum: ["Hungry", "Hero"] ,required: true },
 }, {
   timestamps: true,
   toJSON: {
