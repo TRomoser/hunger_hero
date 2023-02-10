@@ -13,14 +13,14 @@ export default function NavBar({ user, setUser }) {
       <div className='navLogo'>
         <img className='logoImg' src="./images/logo.png"/>
       </div>
-      <Link to="/hero/create">New Post</Link>
-      &nbsp; | &nbsp;
-      <Link to="/hero">All Posts</Link>
-      &nbsp; | &nbsp;
-      <Link to="/profile">Profile</Link>
-      &nbsp;&nbsp;
-      <span>Welcome, {user.businessName}</span>
-      &nbsp;&nbsp;<Link to="" onClick={handleLogOut}>Log Out</Link>
+        <Link className='navLinks' to="/hero/create">New Post</Link>
+        &nbsp; | &nbsp;
+        <Link className='navLinks' to="/hero">All Posts</Link>
+        &nbsp; | &nbsp;
+        <Link className='navLinks' to="/profile">Profile</Link>
+        &nbsp;&nbsp;
+        {/* <span>Welcome, {user.businessName}</span> */}
+        &nbsp;&nbsp;<Link className='navLinks' to="" onClick={handleLogOut}>Log Out</Link>
     </nav>
   );
 }
