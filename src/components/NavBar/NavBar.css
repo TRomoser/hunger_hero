@@ -6,6 +6,7 @@
 
 .navLinks {
     transition: ease-in-out .4s;
+    font-family: 'Lato', sans-serif;
 }
 
 .navLinks:hover {

@@ -1,5 +1,6 @@
 import React ,{useState, useEffect} from 'react';
-import AWS from 'aws-sdk'
+import AWS from 'aws-sdk';
+import './PhotoUpload.css';
 
 const S3_BUCKET = process.env.REACT_APP_S3_BUCKET;
 const REGION ='us-west-1';
@@ -66,7 +67,10 @@ const PhotoUpload = (props) => {
     return (
     <div>
         {/* <div>Native SDK File Upload Progress is {progress}%</div> */}
-        <input type="file" onChange={handleFileInput}/>
+        {/* <label htmlFor='file' className='file' >
+          Upload Photo */}
+        <input id='file' type="file" onChange={handleFileInput}/>
+        {/* </label> */}
         {/* <button onClick={() => uploadFile(selectedFile)}> Upload to S3</button> */}
     </div>
     )
