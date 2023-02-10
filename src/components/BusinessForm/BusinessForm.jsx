@@ -23,20 +23,32 @@ export default function BusinessForm(props) {
     //   const disable = formState.password !== formState.confirm;
       return (
         <>
-            <label>Business Name</label>
-            <input type="text" name="businessName" value={formData.businessName} onChange={handleChange} required />
-            <label>Type of Business</label>
-            <input type="text" name="businessType" value={formData.businessType} onChange={handleChange} required />
-            <label>Address</label>
-            <input type="text" name="address" value={formData.address} onChange={handleChange} required />
-            <label>City</label>
-            <input type="text" name="city" value={formData.city} onChange={handleChange} required />
-            <label>State</label>
-            <input type="text" name="state" value={formData.state} onChange={handleChange} required />
-            <label>Zip</label>
-            <input type="text" name="zipCode" value={formData.zip} onChange={handleChange} required />
-            <label>Phone #</label>
-            <input type="text" name="phoneNumber" value={formData.phoneNumber} onChange={handleChange} required />
+          <div className='mb-5'>
+            <label className="font-bold mb-1 text-gray-700 block">Business Name</label>
+            <input className="w-full px-4 py-3 rounded-lg shadow-md focus:outline-none focus:shadow-outline text-gray-600 font-medium" type="text" name="businessName" value={formData.businessName} onChange={handleChange} required />
+          </div>
+          <div className='mb-5'>
+            <label className="font-bold mb-1 text-gray-700 block">Type of Business</label>
+            <input className="w-full px-4 py-3 rounded-lg shadow-md focus:outline-none focus:shadow-outline text-gray-600 font-medium" type="text" name="businessType" value={formData.businessType} onChange={handleChange} required />
+          </div>
+          <div className='mb-5'>
+            <label className="font-bold mb-1 text-gray-700 block">Address</label>
+            <input className="w-full px-4 py-3 rounded-lg shadow-md focus:outline-none focus:shadow-outline text-gray-600 font-medium" type="text" name="address" value={formData.address} onChange={handleChange} required />
+          </div>
+            <label className="font-bold mb-1 text-gray-700 block">City</label>
+            <input className="w-full px-4 py-3 rounded-lg shadow-md focus:outline-none focus:shadow-outline text-gray-600 font-medium" type="text" name="city" value={formData.city} onChange={handleChange} required />
+          <div className='mb-5'>
+            <label className="font-bold mb-1 text-gray-700 block">State</label>
+            <input className="w-full px-4 py-3 rounded-lg shadow-md focus:outline-none focus:shadow-outline text-gray-600 font-medium" type="text" name="state" value={formData.state} onChange={handleChange} required />
+          </div>
+          <div className='mb-5'>
+            <label className="font-bold mb-1 text-gray-700 block">Zip</label>
+            <input className="w-full px-4 py-3 rounded-lg shadow-md focus:outline-none focus:shadow-outline text-gray-600 font-medium" type="text" name="zipCode" value={formData.zip} onChange={handleChange} required />
+          </div>
+          <div className='mb-5'>
+            <label className="font-bold mb-1 text-gray-700 block">Phone #</label>
+            <input className="w-full px-4 py-3 rounded-lg shadow-md focus:outline-none focus:shadow-outline text-gray-600 font-medium" type="text" name="phoneNumber" value={formData.phoneNumber} onChange={handleChange} required />
+          </div>
             <button type="submit">SIGN UP</button>
         </>
       );
