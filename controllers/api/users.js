@@ -5,8 +5,22 @@ const User = require('../../models/user');
 module.exports = {
   create,
   login,
-  checkToken
+  checkToken,
+  update
 };
+
+async function update(req, res) {
+  try{
+    const image = req.body.image
+    await User.findByIdAndUpdate(
+      {_id: req.user._id}, req.body
+    )
+    const user = await User.findById(req.user._id);
+    req.json(user);
+  } catch(err) {
+    res.status(400).json(err);
+  }
+}
 
 function checkToken(req, res) {
   console.log('req.user', req.user);

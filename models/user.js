@@ -18,6 +18,13 @@ const userSchema = new Schema({
     required: true
   },
   userType: {type: String, enum: ["Hungry", "Hero"] ,required: true },
+  businessName: {type: String, required: false, default: ""},
+  businessType: {type: String, required: false, default: ""},
+  photoUrl: {type: String, required: false},
+  address: {type: String, required: false, default: ""},
+  city: {type: String, required: false, default: ""},
+  state: {type: String, required: false, default: ""},
+  zipCode: {type: String, required: false, default: ""},
 }, {
   timestamps: true,
   toJSON: {

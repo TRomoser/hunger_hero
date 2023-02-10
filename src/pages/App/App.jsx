@@ -32,7 +32,6 @@ export default function App() {
             </Routes>
           </>
           :
-
           <AuthPage setUser={setUser} />
       }
     </main>

@@ -1,47 +1,54 @@
-const AWS_ACCESS_KEY_ID = process.env.AWS_ACCESS_KEY_ID
-const AWS_SECRET_ACCESS_KEY = process.env.AWS_SECRET_ACCESS_KEY
-const S3_Bucket = process.env.S3_Bucket
-const S3_BASE_URL = process.env.S3_BASE_URL
-
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import AWS from 'aws-sdk';
+import S3 from "react-aws-s3"
+window.Buffer = window.Buffer || require("buffer").Buffer;
+const AWS_ACCESS_KEY_ID = process.env.REACT_APP_AWS_ACCESS_KEY_ID;
+const AWS_SECRET_ACCESS_KEY = process.env.REACT_APP_AWS_SECRET_ACCESS_KEY;
+const S3_BUCKET = process.env.REACT_APP_S3_BUCKET;
+// const S3_BASE_URL = process.env.REACT_APP_S3_BASE_URL
 
 export default function PhotoUpload() {
-  const [file, setFile] = useState(null);
+  const fileInput = useRef()
+  // const [file, setFile] = useState(null);
   const [uploadStatus, setUploadStatus] = useState('ready');
 
-  const handleFileSelect = (e) => {
-    setFile(e.target.files[0]);
-  };
+  // const handleFileSelect = (e) => {
+  //   setFile(e.target.files[0]);
+  // };
 
-  const handleUpload = async () => {
+  const handleClick = async (event) => {
+    event.preventDefault();
     setUploadStatus('uploading');
-    const s3 = new AWS.S3({
+    const newFile = fileInput.current.files[0];
+    const newFileName = fileInput.current.files[0].name;
+    const config = {
+      bucketName: S3_BUCKET,
+      // dirName: 'images', /* optional */
+      region: 'us-west-2',
       accessKeyId: AWS_ACCESS_KEY_ID,
-      secretAccessKey: 'AWS_SECRET_ACCESS_KEY',
-    });
-    const params = {
-      Bucket: 'catcollector-tromoser',
-      Key: file.name,
-      Body: file,
-    };
-    try {
-      await s3.upload(params).promise();
-      setUploadStatus('success');
-    } catch (error) {
-      setUploadStatus('error');
+      secretAccessKey: AWS_SECRET_ACCESS_KEY,
     }
-  };
+      const ReactS3Client = new S3(config);
+      // console.log(newFile, newFileName)
 
+      ReactS3Client.uploadFile(newFile, newFileName).then(data => {
+        console.log(data);
+        if (data.status === 204) {
+          console.log('success')
+        } else {
+          console.log("fail")
+        }
+      })
+    }
   return (
-    <div>
-      <input type="file" onChange={handleFileSelect} />
-      {file && (
-        <button onClick={handleUpload}>Upload</button>
-      )}
-      {uploadStatus === 'uploading' && <p>Uploading...</p>}
-      {uploadStatus === 'success' && <p>Upload Successful!</p>}
-      {uploadStatus === 'error' && <p>Upload Failed. Try Again.</p>}
-    </div>
+    <>
+      <form className='upload-steps' onSubmit={handleClick}>
+        <label>Upload File:
+          <input type="file" ref={fileInput} />
+          </label>
+          <br />
+          <button type='submit'>Upload</button>
+        </form>
+    </>
   );
 }
