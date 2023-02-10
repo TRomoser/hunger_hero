@@ -8,10 +8,9 @@ export default function AuthPage({ setUser }) {
     <main>
       <h1>Hunger Hero</h1>
       { showSignUp ?
-      <LoginForm setUser={setUser} /> :
-          <SignUpForm setUser={setUser} />
-          
-          
+      <LoginForm setUser={setUser} /> 
+      :
+      <SignUpForm setUser={setUser} />    
       }
       <button onClick={() => setShowSignUp(!showSignUp)}>{showSignUp ? 'Sign Up' : 'Log In'}</button>
     </main>
