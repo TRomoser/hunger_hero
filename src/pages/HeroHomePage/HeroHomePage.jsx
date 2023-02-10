@@ -1,6 +1,6 @@
 import * as foodsAPI from '../../utilities/food-api';
 import { useEffect, useState } from 'react';
-import {Link} from 'react-router-dom';
+import './HeroHomePage.css'
 
 export default function HeroHomePage({user}) {
 
@@ -31,10 +31,8 @@ export default function HeroHomePage({user}) {
     {posts && posts.map((post, i) => {
         return (
             <div key={i} className="mb-4 w-1/3 h-2/3">
-                <div className="max-w-sm rounded overflow-hidden shadow-lg text-red-800">
-                    {/* <Link onClick={() => getCrystalbyID(crystal._id)} to={`/crystalhome/${crystal._id}`}> */}
-                        {/* <img src='https://unsplash.com/photos/kfDsMDyX1K0' alt="Pizza"></img> */}
-                    {/* </Link> */}
+                <div className="bck-clr max-w-sm rounded overflow-hidden shadow-lg text-red-800">
+                        <div className='imgDiv'><img className="postImg" src={post.image} alt="Food image"></img></div>
                     <div className="px-6 py-4">
                         <div className="font-bold text-xl mb-2">{post.name}</div>
                         <p className="text-gray-700 text-base">
@@ -42,9 +40,9 @@ export default function HeroHomePage({user}) {
                         </p>
                     </div>
                     <div className="px-6 pt-4 pb-2">
-                        <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#{post.availability}</span>
-                        <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#{post.quantity}</span>
-                        <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#{post.location}</span>
+                        <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Available: {post.availability}</span>
+                        <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Quantity: {post.quantity}</span>
+                        <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Location: {post.location}</span>
                     </div>
                 </div>
 

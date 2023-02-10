@@ -1,0 +1,9 @@
+.navBar {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.navLogo {
+    max-width: 90px;
+}
