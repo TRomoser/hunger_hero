@@ -99,6 +99,7 @@ export default function SignUpForm({ setUser, showSignUp, setShowSignUp }){
           }
           </form>
         </div>
+
       <div className='btnCont'><button className='btmBtn bg-white hover:bg-gray-100 text-gray-800 py-2 px-4 border border-gray-400 rounded shadow' onClick={() => setShowSignUp(true)}>Already Have an Account?</button></div>
     </div>
       <p className="error-message">&nbsp;{formData.error}</p>

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { createFood } from '../../utilities/food-api'
+
 import './HeroForm.css'
 
 const FoodTypes = {
@@ -24,6 +25,7 @@ export default function HeroForm() {
         description: '',
         availability: Availability.Immediately,
         location: '',
+        photoUrl: '',
         error: ''
         
     })
@@ -40,8 +42,8 @@ export default function HeroForm() {
       console.log(state, "THIS IS THE STATE")
       evt.preventDefault();
       try {
-        const {name, quantity, description, availability, location} = state;
-        const formData = {name, quantity, description, availability, location};
+        const {name, quantity, description, availability, location, photoUrl} = state;
+        const formData = {name, quantity, description, availability, location, photoUrl};
         // The promise returned by the signUp service
         // method will resolve to the user object included
         // in the payload of the JSON Web Token (JWT)
@@ -87,6 +89,7 @@ export default function HeroForm() {
                   <label className='font-regular mb-1 text-gray-700 block'>Quantity</label>
                   <input className='w-full px-4 py-3 rounded-lg shadow-md focus:outline-none focus:shadow-outline text-gray-600 font-medium' type="text" name="quantity" value={state.quantity} onChange={handleChange} required></input>
                 </div>
+
 
                 <div className='mb-5'>
                   <label className='font-regular mb-1 text-gray-700 block'>Location where this food is available for pickup</label>

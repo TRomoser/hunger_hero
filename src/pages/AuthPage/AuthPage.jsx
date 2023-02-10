@@ -8,6 +8,7 @@ export default function AuthPage({ setUser }) {
   const [showSignUp, setShowSignUp] = useState(false);
 
   return (
+
       <main className='' style={{backgroundColor: "#F3F3F3"}}>
         <div className='formCont'>
           <div className='heroCont'>

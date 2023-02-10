@@ -32,7 +32,7 @@ export default function HeroHomePage({user}) {
         return (
             <div key={i} className="mb-4 w-1/3 h-2/3">
                 <div className="bck-clr max-w-sm rounded overflow-hidden shadow-lg text-red-800">
-                        <div className='imgDiv'><img className="postImg" src={post.image} alt="Food image"></img></div>
+                        <div className='imgDiv'><img className="postImg" src={post.image ? post.image : post.photoUrl} alt="Food image"></img></div>
                     <div className="px-6 py-4">
                         <div className="font-bold text-xl mb-2">{post.name}</div>
                         <p className="text-gray-700 text-base">
