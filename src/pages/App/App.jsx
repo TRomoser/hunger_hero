@@ -4,6 +4,7 @@ import { getUser } from '../../utilities/users-service';
 import './App.css';
 import AuthPage from '../AuthPage/AuthPage';
 import HeroPostPage from '../HeroPostPage/HeroPostPage';
+import HeroHomePage from '../HeroHomePage/HeroHomePage';
 // import OrderHistoryPage from '../OrderHistoryPage/OrderHistoryPage';
 import NavBar from '../../components/NavBar/NavBar';
 
@@ -18,7 +19,7 @@ export default function App() {
             <NavBar user={user} setUser={setUser} />
             <Routes>
               {/* Route components in here */}\
-              {/* <Route path="/hero" element={<HeroHomePage />}> */}
+              <Route path="/hero" element={<HeroHomePage user={user}/>}/>
               <Route path="/hero/create" element={<HeroPostPage />} />
             </Routes>
           </>

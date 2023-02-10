@@ -3,7 +3,7 @@ import { createFood } from '../../utilities/food-api'
 
 const FoodTypes = {
     CannedFood: "Canned Food",
-    Produce: "Produce",
+    Produce: "Fresh Produce",
     ShelfStable: "Shelf Stable",
     PreparedMeals: "Prepared Meals",
     Mixed: "Mixed"
@@ -60,7 +60,7 @@ export default function HeroForm() {
             <label>What kind of food do you want to donate?</label>
             <select name="name" value={state.name} onChange={handleChange} required >
                 <option value={FoodTypes.CannedFood}>Canned Food</option>
-                <option value={FoodTypes.Produce}>Produce</option>
+                <option value={FoodTypes.Produce}>Fresh Produce</option>
                 <option value={FoodTypes.PreparedMeals}>Prepared Meals</option>
                 <option value={FoodTypes.ShelfStable}>Shelf Stable</option>
                 <option value={FoodTypes.Mixed}>Mixed</option>
