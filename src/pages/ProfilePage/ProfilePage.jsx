@@ -48,24 +48,20 @@ const AsyncImage = (props) => {
               <span className="text-xl font-bold block uppercase tracking-wide text-blueGray-600">
                 22
               </span>
-              <span className="text-sm text-blueGray-400">Friends</span>
+              <span className="text-sm text-blueGray-400">Foods Delivered</span>
             </div>
             <div className="mr-4 p-3 text-center">
-              <span className="text-xl font-bold block uppercase tracking-wide text-blueGray-600">
-                10
-              </span>
-              <span className="text-sm text-blueGray-400">Photos</span>
             </div>
             <div className="lg:mr-4 p-3 text-center">
               <span className="text-xl font-bold block uppercase tracking-wide text-blueGray-600">
                 89
               </span>
-              <span className="text-sm text-blueGray-400">Comments</span>
+              <span className="text-sm text-blueGray-400">Food Listings</span>
             </div>
           </div>
         </div>
       </div>
-      <div className="text-center mt-12">
+      <div className="text-center mt-6">
         <h3 className="text-xl font-semibold leading-normal mb-2 text-blueGray-700 mb-2">
           {user.name}
         </h3>

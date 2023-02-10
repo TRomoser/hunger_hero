@@ -44,7 +44,13 @@ export default function HeroHomePage({user}) {
                         <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Quantity: {post.quantity}</span>
                         <span className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">Location: {post.location}</span>
                     </div>
+                    <div>
+                    <button class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+  Request
+</button>
+</div>
                 </div>
+                
 
 
             </div>
