@@ -12,11 +12,11 @@ export default function AuthPage({ setUser }) {
       <h1 className='header'>Sign Up</h1>
       { showSignUp ?
       <div >
-      <LoginForm setUser={setUser} /> 
+      <LoginForm setUser={setUser} setShowSignUp={setShowSignUp}/> 
       </div>
       :
-      <div style={{justifyContent: 'center'}}>
-      <SignUpForm setUser={setUser} />    
+      <div>
+      <SignUpForm setUser={setUser} setShowSignUp={setShowSignUp} />    
       </div>
       }
       <button onClick={() => setShowSignUp(!showSignUp)}>{showSignUp ? 'Sign Up' : 'Log In'}</button>
