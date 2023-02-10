@@ -14,6 +14,8 @@ export default function HeroHomePage({user}) {
         const foodPosts = await foodsAPI.getAll()
         setPosts(foodPosts)
     })();
+
+    console.log("THIS IS THE USER", user)
 }, [])
 
     useEffect(() => {

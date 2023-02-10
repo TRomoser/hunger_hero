@@ -18,7 +18,7 @@ export default function AuthPage({ setUser }) {
       </>
       }
       <button onClick={() => setShowSignUp(!showSignUp)}>{showSignUp ? 'Sign Up' : 'Log In'}</button>
-      <PhotoUpload/>
+
     </main>
   );
 }

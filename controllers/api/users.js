@@ -6,21 +6,21 @@ module.exports = {
   create,
   login,
   checkToken,
-  update
+
 };
 
-async function update(req, res) {
-  try{
-    const image = req.body.image
-    await User.findByIdAndUpdate(
-      {_id: req.user._id}, req.body
-    )
-    const user = await User.findById(req.user._id);
-    req.json(user);
-  } catch(err) {
-    res.status(400).json(err);
-  }
-}
+// async function update(req, res) {
+//   try{
+//     const image = req.body.image
+//     await User.findByIdAndUpdate(
+//       {_id: req.user._id}, req.body
+//     )
+//     const user = await User.findById(req.user._id);
+//     req.json(user);
+//   } catch(err) {
+//     res.status(400).json(err);
+//   }
+// }
 
 function checkToken(req, res) {
   console.log('req.user', req.user);
@@ -28,6 +28,7 @@ function checkToken(req, res) {
 }
 
 async function create(req, res) {
+  console.log(req.body, "REQ.BODY")
   try {
     // Add the user to the db
     const user = await User.create(req.body);

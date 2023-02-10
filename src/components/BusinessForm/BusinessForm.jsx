@@ -1,8 +1,7 @@
 import { updateUser } from '../../utilities/users-api'
-import PhotoUpload from '../PhotoUpload/PhotoUpload';
 
 export default function BusinessForm(props) {
-    const { setUser, handleChange, handleSubmit, formData } = props 
+    const { setUser, handleChange, handleSubmit, formData, setFormData } = props 
 
   
     // handleSubmit = async (evt) => {
@@ -37,8 +36,7 @@ export default function BusinessForm(props) {
             <label>Zip</label>
             <input type="text" name="zipCode" value={formData.zip} onChange={handleChange} required />
             <label>Phone #</label>
-            <input type="text" name="phone" value={formData.phone} onChange={handleChange} required />
-            <PhotoUpload />
+            <input type="text" name="phoneNumber" value={formData.phoneNumber} onChange={handleChange} required />
             <button type="submit">SIGN UP</button>
         </>
       );

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { signUp } from '../../utilities/users-service';
 import BusinessForm from '../BusinessForm/BusinessForm';
+import PhotoUpload from '../PhotoUpload/PhotoUpload';
 
 const UserTypes = {
   Hungry: "Hungry",
@@ -22,6 +23,7 @@ export default function SignUpForm({ setUser }){
     city: '',
     state: '',
     zipCode: '',
+    phoneNumber: '',
     error: ''
   });
 
@@ -31,6 +33,7 @@ export default function SignUpForm({ setUser }){
       [evt.target.name]: evt.target.value,
       error: ''
     });
+    console.log("this is the form data: ", formData)
   };
 
   const handleNext = () => {
@@ -41,8 +44,8 @@ export default function SignUpForm({ setUser }){
     console.log(formData, "THIS IS THE STATE")
     evt.preventDefault();
     try {
-      const {name, email, password, userType, photoUrl, address, state, zipCode, city} = formData;
-      const data = {name, email, password, userType, photoUrl, address, state, zipCode, city} ;
+      const {name, email, password, userType, photoUrl, address, state, zipCode, city, phoneNumber, businessName, businessType} = formData;
+      const data = {name, email, password, userType, photoUrl, address, state, zipCode, city, phoneNumber, businessName, businessType} ;
       const user = await signUp(data);
       setUser(user)
     } catch {
@@ -71,10 +74,12 @@ export default function SignUpForm({ setUser }){
           <input type="password" name="password" value={formData.password} onChange={handleChange} required />
           <label>Confirm</label>
           <input type="password" name="confirm" value={formData.confirm} onChange={handleChange} required />
+          <PhotoUpload formData={formData} setFormData={setFormData}/>
+
           <button onClick={handleNext} disabled={disable}>Next</button>
         </>
         : 
-        <BusinessForm setUser={setUser} handleSubmit={handleSubmit} handleChange={handleChange} formData={formData}/>
+        <BusinessForm setUser={setUser} handleSubmit={handleSubmit} handleChange={handleChange} formData={formData} setFormData={setFormData}/>
         }
       </form>
     </div>
