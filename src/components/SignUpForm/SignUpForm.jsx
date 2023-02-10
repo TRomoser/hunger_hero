@@ -9,7 +9,7 @@ const UserTypes = {
   Hero: "Hero"
 }
 
-export default function SignUpForm({ setUser }){
+export default function SignUpForm({ setUser, setShowSignUp }){
   const [showBusinessForm, setShowBusinessForm] = useState(false)
   const [formData, setFormData] = useState({
     name: '',
@@ -99,6 +99,7 @@ export default function SignUpForm({ setUser }){
         <BusinessForm setUser={setUser} handleSubmit={handleSubmit} handleChange={handleChange} formData={formData} setFormData={setFormData}/>
         }
       </form>
+      <button onClick={() => setShowSignUp(true)}>{'Log In'}</button>
     </div>
       <p className="error-message">&nbsp;{formData.error}</p>
   </div>

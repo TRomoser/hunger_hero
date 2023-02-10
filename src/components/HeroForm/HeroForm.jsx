@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { createFood } from '../../utilities/food-api'
+import PhotoUpload from '../PhotoUpload/PhotoUpload';
 
 const FoodTypes = {
     CannedFood: "Canned Food",
@@ -23,6 +24,7 @@ export default function HeroForm() {
         description: '',
         availability: Availability.Immediately,
         location: '',
+        photoUrl: '',
         error: ''
         
     })
@@ -39,8 +41,8 @@ export default function HeroForm() {
       console.log(state, "THIS IS THE STATE")
       evt.preventDefault();
       try {
-        const {name, quantity, description, availability, location} = state;
-        const formData = {name, quantity, description, availability, location};
+        const {name, quantity, description, availability, location, photoUrl} = state;
+        const formData = {name, quantity, description, availability, location, photoUrl};
         // The promise returned by the signUp service
         // method will resolve to the user object included
         // in the payload of the JSON Web Token (JWT)
@@ -82,7 +84,7 @@ export default function HeroForm() {
             <label>Location where this food is available for pickup</label>
             <input type="text" name="location" value={state.location} onChange={handleChange} required></input>
 
-
+            <PhotoUpload setFormData={setState} formData={state} />
             <button type="submit">Create Food</button>
           </form>
         </div>

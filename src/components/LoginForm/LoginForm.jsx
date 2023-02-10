@@ -28,14 +28,20 @@ export default function LoginForm({ setUser }) {
   }
 
   return (
-    <div>
+    <div className='justify-center align-center'>
       <div className="form-container">
         <form autoComplete="off" onSubmit={handleSubmit}>
-          <label>Email</label>
-          <input type="text" name="email" value={credentials.email} onChange={handleChange} required />
-          <label>Password</label>
-          <input type="password" name="password" value={credentials.password} onChange={handleChange} required />
-          <button type="submit">LOG IN</button>
+          <div className='w-1/3'>
+            <div className='mb-5'>
+              <label className="font-bold mb-1 text-gray-700 block">Email</label>
+              <input className="w-full px-4 py-3 rounded-lg shadow-md focus:outline-none focus:shadow-outline text-gray-600 font-medium" type="text" name="email" value={credentials.email} onChange={handleChange} required />
+            </div>
+            <div className='mb-5'>
+              <label className="font-bold mb-1 text-gray-700 block">Password</label>
+              <input className="w-full px-4 py-3 rounded-lg shadow-md focus:outline-none focus:shadow-outline text-gray-600 font-medium" type="password" name="password" value={credentials.password} onChange={handleChange} required />
+            </div>
+              <button type="submit">LOG IN</button>
+          </div>
         </form>
       </div>
       <p className="error-message">&nbsp;{error}</p>
