@@ -1,0 +1,21 @@
+.home_pg {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 20px;
+}
+
+.postImg {
+    max-width: 300px;
+    max-height: 300px;
+    object-fit: cover;
+    margin: auto;
+}
+
+.imgDiv {
+    margin: 0 auto;
+}
+
+.bck-clr {
+    background-color: rgb(210, 210, 210);   
+}
