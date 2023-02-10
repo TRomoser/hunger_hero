@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { signUp } from '../../utilities/users-service';
 import BusinessForm from '../BusinessForm/BusinessForm';
 import PhotoUpload from '../PhotoUpload/PhotoUpload';
+import './SignUpForm.css';
 
 const UserTypes = {
   Hungry: "Hungry",
@@ -66,14 +67,16 @@ export default function SignUpForm({ setUser }){
           <label>Email</label>
           <input type="email" name="email" value={formData.email} onChange={handleChange} required />
           <label>Type</label>
-          <select type="userType" name="userType" onChange={handleChange} required>
-            <option value={UserTypes.Hungry}>Hungry</option>
-            <option value={UserTypes.Hero}>Hero</option>
-            </select>
           <label>Password</label>
           <input type="password" name="password" value={formData.password} onChange={handleChange} required />
           <label>Confirm</label>
           <input type="password" name="confirm" value={formData.confirm} onChange={handleChange} required />
+          <div className="selectDiv">
+            <select className="heroOrHungry" type="userType" name="userType" onChange={handleChange} required>
+              <option value={UserTypes.Hungry}>Hungry</option>
+              <option value={UserTypes.Hero}>Hero</option>
+            </select>
+          </div>
           <PhotoUpload formData={formData} setFormData={setFormData}/>
 
           <button onClick={handleNext} disabled={disable}>Next</button>
