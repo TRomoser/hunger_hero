@@ -65,7 +65,7 @@ const PhotoUpload = (props) => {
 
     return (
     <div>
-        <div>Native SDK File Upload Progress is {progress}%</div>
+        {/* <div>Native SDK File Upload Progress is {progress}%</div> */}
         <input type="file" onChange={handleFileInput}/>
         {/* <button onClick={() => uploadFile(selectedFile)}> Upload to S3</button> */}
     </div>

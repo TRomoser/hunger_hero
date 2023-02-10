@@ -2,19 +2,22 @@ import { useState } from 'react';
 import SignUpForm from '../../components/SignUpForm/SignUpForm';
 // import BusinessForm from '../../components/BusinessForm/BusinessForm';
 import LoginForm from '../../components/LoginForm/LoginForm';
+import './AuthPage.css';
 
 export default function AuthPage({ setUser }) {
   const [showSignUp, setShowSignUp] = useState(false);
 
   return (
-    <main>
-      <h1>Hunger Hero</h1>
+    <main className='' style={{backgroundColor: "#F3F3F3"}}>
+      <h1 className='header'>Sign Up</h1>
       { showSignUp ?
+      <div >
       <LoginForm setUser={setUser} /> 
+      </div>
       :
-      <>
+      <div style={{justifyContent: 'center'}}>
       <SignUpForm setUser={setUser} />    
-      </>
+      </div>
       }
       <button onClick={() => setShowSignUp(!showSignUp)}>{showSignUp ? 'Sign Up' : 'Log In'}</button>
 

@@ -13,7 +13,7 @@ export default function App() {
   const [user, setUser] = useState(getUser());
 
   return (
-    <main className="App">
+    <main style={{backgroundColor: "#F3F3F3"}}>
       { user ?
       user.userType === 'Hero' ?
           <>
