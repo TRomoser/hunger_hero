@@ -22,6 +22,7 @@ export default function HeroForm() {
         quantity: '',
         description: '',
         availability: Availability.Immediately,
+        location: '',
         error: ''
         
     })
@@ -35,7 +36,7 @@ export default function HeroForm() {
     };
 
     const handleSubmit = async (evt) => {
-      console.log(this.state, "THIS IS THE STATE")
+      console.log(state, "THIS IS THE STATE")
       evt.preventDefault();
       try {
         const {name, quantity, description, availability, location} = state;

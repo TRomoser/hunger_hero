@@ -17,7 +17,7 @@ export default function PhotoUpload() {
   const handleUpload = async () => {
     setUploadStatus('uploading');
     const s3 = new AWS.S3({
-      accessKeyId: 'AWS_ACCESS_KEY_ID',
+      accessKeyId: AWS_ACCESS_KEY_ID,
       secretAccessKey: 'AWS_SECRET_ACCESS_KEY',
     });
     const params = {
