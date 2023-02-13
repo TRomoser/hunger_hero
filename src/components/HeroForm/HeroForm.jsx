@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { createFood } from '../../utilities/food-api'
 
 import './HeroForm.css'
+import  PhotoUpload  from '../PhotoUpload/PhotoUpload'
 
 const FoodTypes = {
     CannedFood: "Canned Food",
@@ -17,7 +18,9 @@ const FoodTypes = {
     WithinAWeek: "Within a week"
   }
 
-export default function HeroForm() {
+export default function HeroForm(props) {
+
+  const { navigate } = props
 
     const [state, setState] = useState({
         name: FoodTypes.CannedFood,
@@ -49,6 +52,7 @@ export default function HeroForm() {
         // in the payload of the JSON Web Token (JWT)
         const food = await createFood(formData);
         // this.props.setFood(food);
+        navigate('/hero')
       } catch {
         // An error occurred
         setState({ error: 'Food creation failed - Try Again' });
@@ -95,6 +99,7 @@ export default function HeroForm() {
                   <label className='font-regular mb-1 text-gray-700 block'>Location where this food is available for pickup</label>
                   <input className='w-full px-4 py-3 rounded-lg shadow-md focus:outline-none focus:shadow-outline text-gray-600 font-medium' type="text" name="location" value={state.location} onChange={handleChange} required></input>
                 </div>
+                <PhotoUpload formData={state} setFormData={setState}/>
               
               <button className='bg-white hover:bg-gray-100 text-gray-800 py-2 px-4 border border-gray-400 rounded shadow' type="submit">Create Food</button>
             </form>
