@@ -8,6 +8,7 @@ import HeroHomePage from '../HeroHomePage/HeroHomePage';
 // import OrderHistoryPage from '../OrderHistoryPage/OrderHistoryPage';
 import NavBar from '../../components/NavBar/NavBar';
 import ProfilePage from '../ProfilePage/ProfilePage';
+import Footer from '../../components/Footer/Footer';
 
 export default function App() {
   const [user, setUser] = useState(getUser());
@@ -24,6 +25,7 @@ export default function App() {
               <Route path="/hero/create" element={<HeroPostPage />} />
               <Route path="/profile" element={<ProfilePage user={user}/>}/>
             </Routes>
+            <Footer />
           </>
           :
           <>
@@ -32,6 +34,7 @@ export default function App() {
               {/* Route components in here */}
               {/* <Route path="/hungry" element={<HungryHomePage />} /> */}
             </Routes>
+            <Footer />
           </>
           :
           <AuthPage setUser={setUser} />
