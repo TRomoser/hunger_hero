@@ -26,42 +26,34 @@ export default function BusinessForm(props) {
         <>
           <div>
             <input className="relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-green-500 focus:outline-none focus:ring-green-500 sm:text-sm mb-4" type="text" name="businessName" value={formData.businessName} placeholder='Business Name' onChange={handleChange}  />
-          <div>
-            <input className="relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-green-500 focus:outline-none focus:ring-green-500 sm:text-sm mb-4" type="text" name="businessName" value={formData.businessName} placeholder='Business Name' onChange={handleChange}  />
           </div>
-          <div>
-            <input className="relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-green-500 focus:outline-none focus:ring-green-500 sm:text-sm mb-4" type="text" name="businessType" value={formData.businessType} placeholder='Business Type' onChange={handleChange}  />
           <div>
             <input className="relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-green-500 focus:outline-none focus:ring-green-500 sm:text-sm mb-4" type="text" name="businessType" value={formData.businessType} placeholder='Business Type' onChange={handleChange}  />
           </div>
           <div>
             <input className="relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-green-500 focus:outline-none focus:ring-green-500 sm:text-sm mb-4" type="text" name="address" value={formData.address} placeholder='Address' onChange={handleChange}  />
-          <div>
-            <input className="relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-green-500 focus:outline-none focus:ring-green-500 sm:text-sm mb-4" type="text" name="address" value={formData.address} placeholder='Address' onChange={handleChange}  />
           </div>
-            <input className="relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-green-500 focus:outline-none focus:ring-green-500 sm:text-sm mb-4" type="text" name="city" value={formData.city} placeholder='City' onChange={handleChange}  />
           <div>
             <input className="relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-green-500 focus:outline-none focus:ring-green-500 sm:text-sm mb-4" type="text" name="state" value={formData.state} placeholder='State' onChange={handleChange}  />
             <input className="relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-green-500 focus:outline-none focus:ring-green-500 sm:text-sm mb-4" type="text" name="city" value={formData.city} placeholder='City' onChange={handleChange}  />
+          </div>
           <div>
             <input className="relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-green-500 focus:outline-none focus:ring-green-500 sm:text-sm mb-4" type="text" name="state" value={formData.state} placeholder='State' onChange={handleChange}  />
           </div>
           <div>
             <input className="relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-green-500 focus:outline-none focus:ring-green-500 sm:text-sm mb-4" type="text" name="zipCode" value={formData.zip} placeholder='Zip Code' onChange={handleChange}  />
-            <input className="relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-green-500 focus:outline-none focus:ring-green-500 sm:text-sm mb-4" type="text" name="phoneNumber" value={formData.phoneNumber} placeholder='Phone Number' onChange={handleChange}  />
-          <PhotoUpload formData={formData} setFormData={setFormData}/>
-          <div>
-            <input className="relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-green-500 focus:outline-none focus:ring-green-500 sm:text-sm mb-4" type="text" name="zipCode" value={formData.zip} placeholder='Zip Code' onChange={handleChange}  />
-            <input className="relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-green-500 focus:outline-none focus:ring-green-500 sm:text-sm mb-4" type="text" name="phoneNumber" value={formData.phoneNumber} placeholder='Phone Number' onChange={handleChange}  />
-          <PhotoUpload formData={formData} setFormData={setFormData}/>
           </div>
+          <div>
+            <input className="relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-green-500 focus:outline-none focus:ring-green-500 sm:text-sm mb-4" type="text" name="phoneNumber" value={formData.phoneNumber} placeholder='Phone Number' onChange={handleChange}  />
+          </div>
+          <PhotoUpload formData={formData} setFormData={setFormData}/>
             <button className="group relative flex w-full justify-center rounded-md border border-transparent bg-green-500 py-2 px-4 text-sm font-medium text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2" type="submit">SIGN UP</button>
             <br />
             <button className='font-medium text-grey-600 hover:text-indigo-50 underline mb-4' onClick={() => setShowBusinessForm(true)}>Not a distributor?</button>
         </>
 
 
-        // <>
+        /* // <>
         //   <div className='mb-5'>
         //     <label className="font-bold mb-1 text-gray-700 block">Business Name</label>
         //     <input className="w-full px-4 py-3 rounded-lg shadow-md focus:outline-none focus:shadow-outline text-gray-600 font-medium" type="text" name="businessName" value={formData.businessName} onChange={handleChange} required />
@@ -120,6 +112,6 @@ export default function BusinessForm(props) {
         //     <input className="w-full px-4 py-3 rounded-lg shadow-md focus:outline-none focus:shadow-outline text-gray-600 font-medium" type="text" name="phoneNumber" value={formData.phoneNumber} onChange={handleChange} required />
         //   </div>
         //     <button type="submit">SIGN UP</button>
-        // </>
+        // </> */
       );
     }

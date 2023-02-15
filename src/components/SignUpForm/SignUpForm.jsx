@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { signUp } from '../../utilities/users-service';
 import BusinessForm from '../BusinessForm/BusinessForm';
 // import PhotoUpload from '../PhotoUpload/PhotoUpload';
-// import PhotoUpload from '../PhotoUpload/PhotoUpload';
 import './SignUpForm.css';
 
 const UserTypes = {
@@ -11,7 +10,6 @@ const UserTypes = {
 }
 
 export default function SignUpForm({ setUser, showSignUp, setShowSignUp }){
-  const [showBusinessForm, setShowBusinessForm] = useState(true)
   const [showBusinessForm, setShowBusinessForm] = useState(true)
   const [formData, setFormData] = useState({
     name: '',
@@ -52,14 +50,6 @@ export default function SignUpForm({ setUser, showSignUp, setShowSignUp }){
     setShowBusinessForm(!showBusinessForm)
   }
 
-  const hungryClick = (evt) => {
-    setFormData({
-      ...formData,
-      userType: UserTypes.Hungry
-    })
-    handleSubmit(evt)
-  }
-
   const handleSubmit = async (evt) => {
     console.log(formData, "THIS IS THE STATE")
     evt.preventDefault();
@@ -89,23 +79,7 @@ export default function SignUpForm({ setUser, showSignUp, setShowSignUp }){
               <div>
                 <label for="name" className="sr-only">Name</label>
                 <input id="name" name="name" type="text" className="relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-green-500 focus:outline-none focus:ring-green-500 sm:text-sm mb-4" placeholder="Name" value={formData.name} onChange={handleChange} />
-    <div className="flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-      <div className="w-full max-w-md space-y-8">
-        <div>
-          <img className="mx-auto h-12 w-auto" src="./images/logo.png" alt="Hunger-Hero" />
-          <h2 className="mt-6 text-center text-lg font-bold tracking-tight text-gray-900">Sign Up with Us</h2>
-        </div>
-        <form className="mt-8 space-y-6" autoComplete="off" onSubmit={handleSubmit}>
-          {showBusinessForm ?
-          <div>
-            <div className="-space-y-px- rounded-md shadow-sm">
-              <div>
-                <label for="name" className="sr-only">Name</label>
-                <input id="name" name="name" type="text" className="relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-green-500 focus:outline-none focus:ring-green-500 sm:text-sm mb-4" placeholder="Name" value={formData.name} onChange={handleChange} />
               </div>
-              <div>
-                <label for="email" className="sr-only">Email</label>
-                <input id="email" name="email" type="email" autocomplete="email" className="relative block w-full appearance-none rounded-none border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-green-500 focus:outline-none focus:ring-green-500 sm:text-sm mb-4" placeholder="Email" value={formData.email} onChange={handleChange} />
               <div>
                 <label for="email" className="sr-only">Email</label>
                 <input id="email" name="email" type="email" autocomplete="email" className="relative block w-full appearance-none rounded-none border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-green-500 focus:outline-none focus:ring-green-500 sm:text-sm mb-4" placeholder="Email" value={formData.email} onChange={handleChange} />
@@ -113,23 +87,12 @@ export default function SignUpForm({ setUser, showSignUp, setShowSignUp }){
               <div>
                 <label for="password" className="sr-only">Password</label>
                 <input id="password" name="password" type="password" className="relative block w-full appearance-none rounded-none border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-green-500 focus:outline-none focus:ring-green-500 sm:text-sm mb-4" placeholder="Password" value={formData.password} onChange={handleChange} />
-              <div>
-                <label for="password" className="sr-only">Password</label>
-                <input id="password" name="password" type="password" className="relative block w-full appearance-none rounded-none border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-green-500 focus:outline-none focus:ring-green-500 sm:text-sm mb-4" placeholder="Password" value={formData.password} onChange={handleChange} />
               </div>
-              <div>
-                <label for="confirm" className="sr-only">Confirm Password</label>
-                <input id="confirm" name="confirm" type="password" className="relative block w-full appearance-none rounded-none rounded-b-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-green-500 focus:outline-none focus:ring-green-500 sm:text-sm mb-4" placeholder="Confirm Password" value={formData.confirm} onChange={handleChange} />
               <div>
                 <label for="confirm" className="sr-only">Confirm Password</label>
                 <input id="confirm" name="confirm" type="password" className="relative block w-full appearance-none rounded-none rounded-b-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-green-500 focus:outline-none focus:ring-green-500 sm:text-sm mb-4" placeholder="Confirm Password" value={formData.confirm} onChange={handleChange} />
               </div>
             </div>
-            <h2 className="mt-6 text-center text-lg tracking-tight text-gray-900">I am a...</h2>
-            <br/>
-            <div className="flex justify-center text-sm space-x-4">
-              <button className="w-1/2 py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-green-500 hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-700" onClick={handleNext} disabled={disable}>Distributor</button>
-              <button type="submit" className="w-1/2 py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-green-500 hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-700" onClick={hungryClick} >Receiver</button>
             <h2 className="mt-6 text-center text-lg tracking-tight text-gray-900">I am a...</h2>
             <br/>
             <div className="flex justify-center text-sm space-x-4">
@@ -140,12 +103,10 @@ export default function SignUpForm({ setUser, showSignUp, setShowSignUp }){
           :
           <BusinessForm setUser={setUser} handleSubmit={handleSubmit} handleChange={handleChange} formData={formData} setFormData={setFormData} setShowBusinessForm={setShowBusinessForm}/>
           }
-          {/* <button type="submit" className="group relative flex w-full justify-center rounded-md border border-transparent bg-green-500 py-2 px-4 text-sm font-medium text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2">Sign Up</button> */}
         </form>
         <div className='flex justify-end text-sm'>
           <button className='font-medium text-grey-600 hover:text-indigo-50 underline mb-4' onClick={() => setShowSignUp(true)}>Already have an account?</button>
         </div>
-      </div>
       </div>
     </div>
   )
@@ -199,10 +160,6 @@ export default function SignUpForm({ setUser, showSignUp, setShowSignUp }){
   //   </div>
   //     <p className="error-message">&nbsp;{formData.error}</p>
   // </div>
-
-  )
-}
-  
 
   //   <div className='parent'>
   //     <div className="child">
