@@ -5,7 +5,7 @@ import LoginForm from '../../components/LoginForm/LoginForm';
 import './AuthPage.css';
 
 export default function AuthPage({ setUser }) {
-  const [showSignUp, setShowSignUp] = useState(false);
+  const [showSignUp, setShowSignUp] = useState(true);
 
   return (
 
@@ -19,11 +19,11 @@ export default function AuthPage({ setUser }) {
           <h1 className='header'>Sign Up</h1>
           { showSignUp ?
           <div >
-          <LoginForm setUser={setUser} setShowSignUp={setShowSignUp} showSignUp={showSignUp}/>
+            <LoginForm setUser={setUser} setShowSignUp={setShowSignUp} showSignUp={showSignUp}/>
           </div>
           :
           <div style={{justifyContent: 'center'}}>
-          <SignUpForm setUser={setUser} setShowSignUp={setShowSignUp} showSignUp={showSignUp} />
+            <SignUpForm setUser={setUser} setShowSignUp={setShowSignUp} showSignUp={showSignUp} />
           </div>
           }
         </div>

@@ -24,9 +24,10 @@
 .child {
     background-color: rgb(226, 226, 228);
     color: black;
-    width: 50%;
+    width: 90%;
     margin: 0 auto;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     /* height: 100vh; */
