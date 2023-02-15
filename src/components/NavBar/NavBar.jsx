@@ -11,7 +11,7 @@ export default function NavBar({ user, setUser }) {
   return (
     <nav className='navBar'>
       <div className='navLogo'>
-        <img className='logoImg' src="./images/logo.png"/>
+        <Link to="/"><img className='logoImg' src="./images/logo.png"/></Link>
       </div>
         <Link className='navLinks' to="/hero/create">New Post</Link>
         &nbsp; | &nbsp;
