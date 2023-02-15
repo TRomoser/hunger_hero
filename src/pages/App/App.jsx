@@ -9,6 +9,7 @@ import HeroHomePage from '../HeroHomePage/HeroHomePage';
 import NavBar from '../../components/NavBar/NavBar';
 import ProfilePage from '../ProfilePage/ProfilePage';
 import Footer from '../../components/Footer/Footer';
+import HeroLandingPage from '../HeroLandingPage/HeroLandingPage';
 
 export default function App() {
   const [user, setUser] = useState(getUser());
@@ -21,6 +22,7 @@ export default function App() {
             <NavBar user={user} setUser={setUser} />
             <Routes>
               {/* Route components in here */}\
+              <Route path="/" element={<HeroLandingPage />}/>
               <Route path="/hero" element={<HeroHomePage user={user}/>}/>
               <Route path="/hero/create" element={<HeroPostPage />} />
               <Route path="/profile" element={<ProfilePage user={user}/>}/>
