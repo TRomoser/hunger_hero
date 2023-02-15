@@ -10,3 +10,7 @@ export async function getAll(){
   console.log('all the food items');
   return sendRequest(BASE_URL)
 }
+
+export async function getFood(id) {
+  return sendRequest(`${BASE_URL}/${id}`, 'GET')
+}

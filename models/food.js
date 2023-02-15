@@ -7,7 +7,8 @@ const foodSchema = new Schema({
     description: {type: String, required: true},
     availability: {type: String, enum: ["Immediately", "Within 24 hours", "Within a week"],required: true},
     location: {type: String, required: true, lowercase: true},
-    photoUrl: {type: String, default:'./images/image2.png'}
+    photoUrl: {type: String, default:'./images/image2.png'},
+    user: {type: Schema.Types.ObjectId, ref: 'User'},
 }, {
   timestamps: true,
 });
