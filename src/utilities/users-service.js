@@ -9,6 +9,7 @@ export async function signUp(userData) {
   console.log(userData, "<----- USER DATA")
   const token = await usersAPI.signUp(userData);
   localStorage.setItem('token', token);
+  console.log("THIS IS THE TOKEN", token)
   return getUser();
 }
 

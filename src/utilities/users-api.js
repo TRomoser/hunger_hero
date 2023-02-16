@@ -13,3 +13,7 @@ export async function login(credentials) {
 export async function checkToken() {
   return sendRequest(`${BASE_URL}/check-token`);
 }
+
+export async function fetchUser(id) {
+  return sendRequest(`${BASE_URL}/${id}`, 'GET')
+}

@@ -8,8 +8,6 @@ const userSchema = new Schema({
   name: {type: String, required: true},
   email: {
     type: String,
-    unique: true,
-    trim: true,
     lowercase: true,
     required: true
   },
@@ -18,6 +16,14 @@ const userSchema = new Schema({
     required: true
   },
   userType: {type: String, enum: ["Hungry", "Hero"] ,required: true },
+  businessName: {type: String, required: true},
+  businessType: {type: String, required: true},
+  photoUrl: {type: String, required: true},
+  address: {type: String, required: true},
+  city: {type: String, required: true},
+  state: {type: String, required: true},
+  zipCode: {type: String, required: true},
+  phoneNumber: {type: String, required: true}
 }, {
   timestamps: true,
   toJSON: {

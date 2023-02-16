@@ -1,0 +1,19 @@
+.navBar {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.navLinks {
+    transition: ease-in-out .4s;
+    font-family: 'Lato', sans-serif;
+}
+
+.navLinks:hover {
+    color: rgb(160, 210, 170);
+}
+
+.navLogo {
+    max-width: 90px;
+}

@@ -1,47 +1,79 @@
-const AWS_ACCESS_KEY_ID = process.env.AWS_ACCESS_KEY_ID
-const AWS_SECRET_ACCESS_KEY = process.env.AWS_SECRET_ACCESS_KEY
-const S3_Bucket = process.env.S3_Bucket
-const S3_BASE_URL = process.env.S3_BASE_URL
-
-import { useState } from 'react';
+import React ,{useState, useEffect} from 'react';
 import AWS from 'aws-sdk';
+import './PhotoUpload.css';
 
-export default function PhotoUpload() {
-  const [file, setFile] = useState(null);
-  const [uploadStatus, setUploadStatus] = useState('ready');
+const S3_BUCKET = process.env.REACT_APP_S3_BUCKET;
+const REGION ='us-west-1';
 
-  const handleFileSelect = (e) => {
-    setFile(e.target.files[0]);
-  };
 
-  const handleUpload = async () => {
-    setUploadStatus('uploading');
-    const s3 = new AWS.S3({
-      accessKeyId: AWS_ACCESS_KEY_ID,
-      secretAccessKey: 'AWS_SECRET_ACCESS_KEY',
-    });
-    const params = {
-      Bucket: 'catcollector-tromoser',
-      Key: file.name,
-      Body: file,
-    };
-    try {
-      await s3.upload(params).promise();
-      setUploadStatus('success');
-    } catch (error) {
-      setUploadStatus('error');
+AWS.config.update({
+    accessKeyId: process.env.REACT_APP_AWS_ACCESS_KEY_ID,
+    secretAccessKey: process.env.REACT_APP_AWS_SECRET_ACCESS_KEY
+})
+
+const myBucket = new AWS.S3({
+    params: { Bucket: S3_BUCKET},
+    region: REGION,
+})
+
+const PhotoUpload = (props) => {
+
+  const { formData, setFormData } = props
+
+    const [progress , setProgress] = useState(0);
+    const [selectedFile, setSelectedFile] = useState(null);
+
+    const handleFileInput = (e) => {
+        setSelectedFile(e.target.files[0]);
     }
-  };
 
-  return (
+    useEffect(() => {
+      if(selectedFile) {
+        uploadFile(selectedFile)
+      }
+      
+
+    }, [selectedFile])
+
+    const uploadFile = async (file) => {
+
+        const params = {
+            ACL: 'public-read',
+            Body: file,
+            Bucket: S3_BUCKET,
+            Key: file.name
+        };
+
+        let s3Response = await myBucket.upload(params).promise()
+        console.log(s3Response.Location, "S3 LOCATION")
+        setFormData({
+          ...formData,
+          ['photoUrl']: s3Response.Location,
+          error: ''
+        });
+
+
+        // myBucket.putObject(params)
+        //     .on('httpUploadProgress', (evt) => {
+        //         setProgress(Math.round((evt.loaded / evt.total) * 100))
+        //     })
+        //     .send((err) => {
+        //         if (err) console.log(err)
+        //     })
+            
+    }
+
+
+    return (
     <div>
-      <input type="file" onChange={handleFileSelect} />
-      {file && (
-        <button onClick={handleUpload}>Upload</button>
-      )}
-      {uploadStatus === 'uploading' && <p>Uploading...</p>}
-      {uploadStatus === 'success' && <p>Upload Successful!</p>}
-      {uploadStatus === 'error' && <p>Upload Failed. Try Again.</p>}
+        {/* <div>Native SDK File Upload Progress is {progress}%</div> */}
+        {/* <label htmlFor='file' className='file' >
+          Upload Photo */}
+        <input id='file' type="file" onChange={handleFileInput}/>
+        {/* </label> */}
+        {/* <button onClick={() => uploadFile(selectedFile)}> Upload to S3</button> */}
     </div>
-  );
+    )
 }
+
+export default PhotoUpload;

@@ -1,0 +1,33 @@
+.selectDiv {
+    display: flex;
+    
+}
+
+.heroOrHungry {
+    
+}
+
+.mb-5 {
+    font-family: 'Lato', sans-serif;
+    font-size: 20;
+}
+
+.parent {
+    background-color: white;
+    color: black;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.child {
+    background-color: rgb(226, 226, 228);
+    color: black;
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 100vh; */
+}
