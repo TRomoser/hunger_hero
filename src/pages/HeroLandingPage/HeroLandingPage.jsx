@@ -16,11 +16,21 @@ export default function HeroLandingPage() {
                         <img className='img' src='./images/charity.jpg'/>
                     </div>
                 </div>
+                <h1 className='sampleText'>These all can go a long way</h1>
                 <div className='sampleItems'>
-                    <h1>sample items to donate</h1>
+                    <img src='./images/image1.png'/>
+                    <img src='./images/image2.png'/>
+                    <img src='./images/image3.png'/>
+                    <img src='./images/image4.png'/>
                 </div>
+                <h1 className='sampleText2'>How you can help</h1>
                 <div className='buttons'>
-                    <h1>buttons</h1>
+                    <div className='roundBtn'> 
+                    </div>
+                    <div className='roundBtn'> 
+                    </div>
+                    <div className='roundBtn'> 
+                    </div>
                 </div>
                 <div className='facts'>
                     <h1>facts</h1>
