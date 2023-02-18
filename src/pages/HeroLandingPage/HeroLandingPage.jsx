@@ -14,31 +14,31 @@ export default function HeroLandingPage() {
                         </div>
                     </div>
                     <div className='imgDiv'>
-                        <img className='img' src='./images/charity.jpg'/>
+                        <img alt="" className='img' src='./images/charity.jpg'/>
                     </div>
                 </div>
                 <h1 className='sampleText'>These all can go a long way</h1>
                 <div className='sampleItems'>
-                    <img src='./images/image1.png'/>
-                    <img src='./images/image2.png'/>
-                    <img src='./images/image3.png'/>
-                    <img src='./images/image4.png'/>
+                    <img alt="" src='./images/image1.png'/>
+                    <img alt="" src='./images/image2.png'/>
+                    <img alt="" src='./images/image3.png'/>
+                    <img alt="" src='./images/image4.png'/>
                 </div>
                 <h1 className='sampleText2'>How you can help</h1>
                 <div className='buttons'>
                     <div className='roundBtn'>
                         <Link to="/hero/create">
-                            <img src="./images/icon3.png" />
+                            <img alt="" src="./images/icon3.png" />
                         </Link>
                     </div>
                     <div className='roundBtn'>
                         <Link>
-                            <img src="./images/icon.png" />
+                            <img alt="" src="./images/icon.png" />
                         </Link>
                     </div>
                     <div className='roundBtn'>
                         <Link>
-                            <img src="./images/icon2.png" />
+                            <img alt="" src="./images/icon2.png" />
                         </Link>
                     </div>
                 </div>
