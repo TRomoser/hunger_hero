@@ -1,4 +1,5 @@
 import './HeroLandingPage.css';
+import { Link } from 'react-router-dom';
 
 export default function HeroLandingPage() {
     return (
@@ -25,11 +26,20 @@ export default function HeroLandingPage() {
                 </div>
                 <h1 className='sampleText2'>How you can help</h1>
                 <div className='buttons'>
-                    <div className='roundBtn'> 
+                    <div className='roundBtn'>
+                        <Link to="/hero/create">
+                            <img src="./images/icon3.png" />
+                        </Link>
                     </div>
-                    <div className='roundBtn'> 
+                    <div className='roundBtn'>
+                        <Link>
+                            <img src="./images/icon.png" />
+                        </Link>
                     </div>
-                    <div className='roundBtn'> 
+                    <div className='roundBtn'>
+                        <Link>
+                            <img src="./images/icon2.png" />
+                        </Link>
                     </div>
                 </div>
                 <div className='facts'>
