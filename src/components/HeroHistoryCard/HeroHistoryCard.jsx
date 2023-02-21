@@ -1,28 +1,39 @@
 import "./HeroHistoryCard.css"
+import { useNavigate } from "react-router-dom";
 
 export default function HeroHistoryCard(props) {
-  const { photoUrl, name, address, foodType, availability, timeAvailable, phoneNumber } = props;
+  const { id, name, quantity, availableTime, availableDate, address, foodType, phoneNumber, photoUrl, content } = props;
+  const navigate = useNavigate();
+
+  function handlePostNav() {
+    navigate(`/hero/${id}`);
+  }
+
+  function handleCancel() {
+    console.log('cancel');
+    // TODO: add delete functionality
+  }
 
   return (
-    <div className="hero-history-card">
-      <img src={photoUrl} alt={name} />
-      <div>
-        <h4>{name}</h4>
-        <p>{address}</p>
-        <p>{foodType}</p>
-        <div className="info-line">
-          <span><i className="fa fa-calendar"></i></span>
-          <span>{availability}</span>
-          <span><i className="fa fa-clock-o"></i></span>
-          <span>{timeAvailable}</span>
-          <span><i className="fa fa-phone"></i></span>
-          <span>{phoneNumber}</span>
-        </div>
-        <div className="action-buttons">
-          <div>See Post</div>
-          <div>Need to Cancel?</div>
+    <div key={id} className="hero-history-card">
+      <img className="hero-history-card__img" src={photoUrl} alt={name} />
+      <div className="hero-history-card__content">
+        <div>
+          <h4 className="hero-history-card__title">{name}</h4>
+          <p className="hero-history-card__address">{address}</p>
+          <p className="hero-history-card__food-type">{foodType}</p>
+          <div className="hero-history-card__info-line">
+            <span><i className="fa-regular fa-calendar-days"></i>{availableDate}</span>
+            <span><i className='fa-regular fa-clock'></i>{availableTime}</span>
+            <span><i className="fa-solid fa-phone"></i>{phoneNumber}</span>
+          </div>
+          <div className="action-buttons">
+            <div onClick={handlePostNav} className="btn btn-green">See Post</div>
+            <div onClick={handleCancel} className="btn btn-black">Need to Cancel?</div>
+          </div>
         </div>
       </div>
+      <hr />
     </div>
   );
 }

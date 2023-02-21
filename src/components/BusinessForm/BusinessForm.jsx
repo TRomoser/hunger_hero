@@ -34,7 +34,6 @@ export default function BusinessForm(props) {
             <input className="relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-green-500 focus:outline-none focus:ring-green-500 sm:text-sm mb-4" type="text" name="address" value={formData.address} placeholder='Address' onChange={handleChange}  />
           </div>
           <div>
-            <input className="relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-green-500 focus:outline-none focus:ring-green-500 sm:text-sm mb-4" type="text" name="state" value={formData.state} placeholder='State' onChange={handleChange}  />
             <input className="relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-green-500 focus:outline-none focus:ring-green-500 sm:text-sm mb-4" type="text" name="city" value={formData.city} placeholder='City' onChange={handleChange}  />
           </div>
           <div>

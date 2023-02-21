@@ -5,7 +5,7 @@ import './App.css';
 import AuthPage from '../AuthPage/AuthPage';
 import HeroPostPage from '../HeroPostPage/HeroPostPage';
 import HeroHomePage from '../HeroHomePage/HeroHomePage';
-import HeroPostsHistroy from '../HeroPostsHistory/HeroPostsHistory';
+import HeroPostsHistory from '../HeroPostsHistory/HeroPostsHistory';
 import NavBar from '../../components/NavBar/NavBar';
 import ProfilePage from '../ProfilePage/ProfilePage';
 
@@ -23,7 +23,7 @@ export default function App() {
               <Route path="/hero" element={<HeroHomePage user={user}/>}/>
               <Route path="/hero/create" element={<HeroPostPage />} />
               <Route path="/profile" element={<ProfilePage user={user}/>}/>
-              <Route path="/hero/posts" element={<HeroPostsHistroy user={user} />} />
+              <Route path="/hero/posts" element={<HeroPostsHistory user={user} />} />
             </Routes>
           </>
           :
