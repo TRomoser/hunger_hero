@@ -2,8 +2,10 @@ import * as foodsAPI from '../../utilities/food-api';
 import { useEffect, useState } from 'react';
 import './HeroHomePage.css'
 
-export default function HeroHomePage({user}) {
-  const [posts, setPosts] = useState([])
+
+export default function HeroHomePage({user, navigate}) {
+
+    const [posts, setPosts] = useState([])
 
   // API REQUEST ON COMPONENT MOUNT
   useEffect(function() {

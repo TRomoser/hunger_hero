@@ -9,6 +9,7 @@ var jsonParser = bodyParser.json()
   
 
 // All paths start with '/api/users'
+router.get('/:id', jsonParser, usersCtrl.fetchUser)
 
 // POST /api/users (create a user - sign up)
 router.post('/', jsonParser, usersCtrl.create);

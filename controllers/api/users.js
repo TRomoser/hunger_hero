@@ -6,6 +6,7 @@ module.exports = {
   create,
   login,
   checkToken,
+  fetchUser
 
 };
 
@@ -25,6 +26,17 @@ module.exports = {
 function checkToken(req, res) {
   console.log('req.user', req.user);
   res.json(req.exp);
+}
+
+async function fetchUser(req, res) {
+  let userId = req.params.id
+  try {
+    const user = await User.findById(userId);
+    console.log("this is the user", user)
+    res.json(user)
+  } catch (err) {
+    res.status(400).json(err);
+  }
 }
 
 async function create(req, res) {

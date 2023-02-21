@@ -10,7 +10,8 @@ const foodSchema = new Schema({
     availableTime: {type: String},
     availableDate: {type: String},
     location: {type: String, required: true, lowercase: true},
-    photoUrl: {type: String, default:'./images/image2.png'}
+    photoUrl: {type: String, default:'./images/image2.png'},
+    user: {type: Schema.Types.ObjectId, ref: 'User'},
 }, {
   timestamps: true,
 });
