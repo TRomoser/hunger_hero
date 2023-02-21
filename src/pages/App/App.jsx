@@ -5,7 +5,7 @@ import './App.css';
 import AuthPage from '../AuthPage/AuthPage';
 import HeroPostPage from '../HeroPostPage/HeroPostPage';
 import HeroHomePage from '../HeroHomePage/HeroHomePage';
-// import OrderHistoryPage from '../OrderHistoryPage/OrderHistoryPage';
+import HeroPostsHistory from '../HeroPostsHistory/HeroPostsHistory';
 import NavBar from '../../components/NavBar/NavBar';
 import ProfilePage from '../ProfilePage/ProfilePage';
 import Footer from '../../components/Footer/Footer';
@@ -30,8 +30,11 @@ export default function App() {
               <Route path="/hero/create" element={<HeroPostPage user={user}/>} />
               <Route path="/" element={<HeroLandingPage />}/>
               <Route path="/profile" element={<ProfilePage user={user}/>}/>
+
+              <Route path="/hero/posts" element={<HeroPostsHistory user={user} />} />
               <Route path="/hero" element={<HeroHomePage user={user} navigate={navigate}/>}/>
               <Route path="/post/:id" element={<FoodShowPage />} />
+
             </Routes>
             <Footer />
           </>

@@ -63,7 +63,6 @@ export default function HeroForm(props) {
         <div className='parent'>
           <div className="child form-container">
             <form autoComplete="off" onSubmit={handleSubmit}>
-              
                 <div className='mb-5'>
                   <label className='font-regular mb-1 text-gray-700 block'>What kind of food do you want to donate?</label>
                   <select className='w-full px-4 py-3 rounded-lg shadow-md focus:outline-none focus:shadow-outline text-gray-600 font-medium' name="name" value={state.name} onChange={handleChange} required >
