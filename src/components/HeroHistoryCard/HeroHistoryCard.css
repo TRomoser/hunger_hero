@@ -1,0 +1,37 @@
+.hero-history-card {
+  display: flex;
+  align-items: center;
+}
+
+.hero-history-card img {
+  margin-right: 10px;
+  width: 100px;
+  height: 100px;
+}
+
+.hero-history-card h4 {
+  margin: 0;
+}
+
+.hero-history-card p {
+  margin: 5px 0;
+}
+
+.hero-history-card .info-line {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.hero-history-card .info-line span {
+  margin-right: 5px;
+}
+
+.hero-history-card .action-buttons {
+  display: flex;
+}
+
+.hero-history-card .action-buttons div {
+  margin-right: 10px;
+  cursor: pointer;
+}
