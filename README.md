@@ -26,6 +26,7 @@ This app was developed over a two-day hackathon by a team of four UX/UI designer
 - Express for the server framework
 - React for the frontend framework
 - Node.js for the runtime environment
+- Amazon S3 for image storage and retrieval 
 - Tailwind and standard CSS for styling
 
 ## License
