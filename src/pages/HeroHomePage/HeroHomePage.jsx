@@ -25,7 +25,8 @@ export default function HeroHomePage({user, navigate}) {
   return (
     <div>
       <div  className="md:flex-auto home_pg flex-wrap">
-        {posts && posts.map((post, i) => {
+        {posts.length !== 0 ?
+         posts.map((post, i) => {
           return (
             <div key={i} className="mb-4 w-1/3 h-2/3">
               <div className="bck-clr max-w-sm rounded overflow-hidden shadow-lg text-red-800">
@@ -51,7 +52,15 @@ export default function HeroHomePage({user, navigate}) {
               </div>
             </div>
           )
-        })}
+        })
+        :
+        <div className="flex justify-center">
+            <div className="flex flex-col justify-center items-center">
+              <h1 className="text-2xl text-gray-700">No Food Posts Yet</h1>
+              <h1 className="text-2xl text-gray-700">Be the first to post!</h1>
+            </div>
+          </div>
+      }
       </div>
     </div>
   );

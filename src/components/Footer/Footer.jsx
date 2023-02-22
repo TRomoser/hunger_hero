@@ -4,7 +4,7 @@ export default function Footer() {
     return (
         <div className='footer'>
             <div className='footerLogo'>
-                <img className='logoImg' src="./images/logo.png"/>
+                <img className='logoImg' src="../images/logo.png"/>
             </div>
             <ul className='footerLinks'>
                 <li className='link'>About</li>
