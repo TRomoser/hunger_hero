@@ -14,14 +14,14 @@ export default function NavBar({ user, setUser }) {
       <div className='navLogo'>
         <img className='logoImg' src="../../images/logo.png" alt='logo' / >
       </div>
-      <h1>Hunger Hero</h1>
-        <Link>Home</Link>
+      <h2>Hunger Hero</h2>
+        <Link className='navLinks' to="/" >Home</Link>
         &nbsp; | &nbsp;
-        <Link className='navLinks' to="/hero/create">New Post</Link>
+        <Link className='navLinks' to="/hero/posts">Your Posts</Link>
         &nbsp; | &nbsp;
-        <Link className='navLinks' to="/hero">Posts</Link>
+        <Link className='navLinks' to="/hero">All Posts</Link>
         &nbsp; | &nbsp;
-        <Link>Requests</Link>
+        <Link className='navLinks' to="/requests" >Requests</Link>
         &nbsp; | &nbsp;
         <Link className='navLinks' to="/profile">My Account</Link>
         &nbsp;&nbsp;

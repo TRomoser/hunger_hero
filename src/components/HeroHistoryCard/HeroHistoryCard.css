@@ -81,7 +81,7 @@
 .btn-black:hover {
   background-color: #444444;
 }
-/* make the hr be on the bottom of the card */
+
 hr {
   border: 1px solid rgb(179, 179, 179);
   justify-content: center;
