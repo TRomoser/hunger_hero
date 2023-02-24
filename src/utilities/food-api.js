@@ -14,3 +14,7 @@ export async function getAll(){
 export async function getFood(id) {
   return sendRequest(`${BASE_URL}/${id}`, 'GET')
 }
+
+export async function deleteFood(id) {
+  return sendRequest(`${BASE_URL}/${id}`, 'DELETE')
+}

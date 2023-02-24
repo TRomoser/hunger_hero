@@ -46,7 +46,8 @@ export default function BusinessForm(props) {
             <input className="relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-green-500 focus:outline-none focus:ring-green-500 sm:text-sm mb-4" type="text" name="phoneNumber" value={formData.phoneNumber} placeholder='Phone Number' onChange={handleChange}  />
           </div>
           <PhotoUpload formData={formData} setFormData={setFormData}/>
-            <button className="group relative flex w-full justify-center rounded-md border border-transparent bg-green-500 py-2 px-4 text-sm font-medium text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2" type="submit">SIGN UP</button>
+            <button className="group relative flex w-full justify-center rounded-md border border-transparent bg-green-500 py-2 px-4 text-sm font-medium text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2" type="submit"
+            onClick={handleSubmit}>SIGN UP</button>
             <br />
             <button className='font-medium text-grey-600 hover:text-indigo-50 underline mb-4' onClick={() => setShowBusinessForm(true)}>Not a distributor?</button>
         </>

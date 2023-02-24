@@ -3,7 +3,8 @@ const Food = require('../../models/food');
 module.exports = {
   create,
   index,
-  getFood
+  getFood,
+  delete: deleteFood
 }
 
 async function create(req, res) {
@@ -39,3 +40,8 @@ async function create(req, res) {
     res.json(food);
   }
 
+  async function deleteFood(req, res) {
+    req.body.user = req.user._id;
+    const food = await Food.findByIdAndDelete(req.params.id);
+    res.json(food);
+  }
