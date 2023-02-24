@@ -47,7 +47,6 @@ export default function SignUpForm({ setUser, showSignUp, setShowSignUp }){
       userType: UserTypes.Hungry
     })
     handleSubmit(evt)
-    setShowBusinessForm(!showBusinessForm)
   }
 
   const handleSubmit = async (evt) => {
