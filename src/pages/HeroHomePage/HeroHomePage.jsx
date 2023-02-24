@@ -1,22 +1,22 @@
-// import * as foodsAPI from '../../utilities/food-api';
+import * as foodsAPI from '../../utilities/food-api';
 import { useEffect, useState } from 'react';
 import './HeroHomePage.css'
 
 
-export default function HeroHomePage({ user, navigate, posts }) {
+export default function HeroHomePage({ user, navigate }) {
 
-  //   const [posts, setPosts] = useState([])
+    const [posts, setPosts] = useState([])
 
-  // // API REQUEST ON COMPONENT MOUNT
-  // useEffect(function() {
-  //   (async function() {
-  //       console.log('index fnt')
-  //       // foodsAPI.getAll()
-  //       const foodPosts = await foodsAPI.getAll()
-  //       setPosts(foodPosts)
-  //   })();
-  //   console.log("THIS IS THE USER", user)
-  // }, [])
+  // API REQUEST ON COMPONENT MOUNT
+  useEffect(function() {
+    (async function() {
+        console.log('index fnt')
+        // foodsAPI.getAll()
+        const foodPosts = await foodsAPI.getAll()
+        setPosts(foodPosts)
+    })();
+    console.log("THIS IS THE USER", user)
+  }, [])
 
   useEffect(() => {
       console.log(posts)
