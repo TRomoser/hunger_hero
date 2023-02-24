@@ -82,7 +82,7 @@
   background-color: #444444;
 }
 
-hr {
+.card-btm-line {
   border: 1px solid rgb(179, 179, 179);
   justify-content: center;
   width: 90%;

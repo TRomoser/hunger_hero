@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import { getUser } from '../../utilities/users-service';
+import * as foodsAPI from '../../utilities/food-api';
 import './App.css';
 import AuthPage from '../AuthPage/AuthPage';
 import HeroPostPage from '../HeroPostPage/HeroPostPage';
@@ -16,7 +17,26 @@ import SplashPage from '../SplashPage/SplashPage';
 
 export default function App() {
   const [user, setUser] = useState(getUser());
+  const [posts, setPosts] = useState([])
   const navigate = useNavigate()
+
+  // API REQUEST ON COMPONENT MOUNT
+  useEffect(function() {
+    (async function() {
+        console.log('index fnt')
+        // foodsAPI.getAll()
+        const foodPosts = await foodsAPI.getAll()
+        console.log("THIS IS THE POSTS", foodPosts)
+        setPosts(foodPosts)
+    })();
+  }, [])
+
+  async function handleDeleteFood(id) {
+    await foodsAPI.deleteFood(id);
+    const newFoods = posts.filter(posts => posts._id !== id);
+    setPosts(newFoods);
+    navigate('/hero/posts');
+  }
 
   return (
     <main style={{backgroundColor: "#F3F3F3"}}>
@@ -34,9 +54,9 @@ export default function App() {
 
               <Route path="/profile" element={<ProfilePage user={user}/>}/>
 
-              <Route path="/hero/posts" element={<HeroPostsHistory user={user} />} />
+              <Route path="/hero/posts" element={<HeroPostsHistory user={user} posts={posts} handleDeleteFood={handleDeleteFood} />} />
 
-              <Route path="/hero" element={<HeroHomePage user={user} navigate={navigate}/>}/>
+              <Route path="/hero" element={<HeroHomePage user={user} post={posts} navigate={navigate}/>}/>
 
               <Route path="/post/:id" element={<FoodShowPage />} />
 

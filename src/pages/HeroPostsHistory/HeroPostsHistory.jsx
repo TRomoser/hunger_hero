@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 import './HeroPostsHistory.css';
 import HeroHistoryCard from '../../components/HeroHistoryCard/HeroHistoryCard';
 
-export default function HeroPostsHistory() {
+// add posts
+export default function HeroPostsHistory({ user, handleDeleteFood }) {
   // import props/posts from App.jsx
   const posts = [{
     id: 0,
