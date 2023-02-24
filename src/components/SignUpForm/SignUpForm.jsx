@@ -4,10 +4,10 @@ import BusinessForm from '../BusinessForm/BusinessForm';
 // import PhotoUpload from '../PhotoUpload/PhotoUpload';
 import './SignUpForm.css';
 
-const UserTypes = {
-  Hungry: "Hungry",
-  Hero: "Hero"
-}
+// const UserTypes = {
+//   Hungry: "Hungry",
+//   Hero: "Hero"
+// }
 
 export default function SignUpForm({ setUser, showSignUp, setShowSignUp }){
   const [showBusinessForm, setShowBusinessForm] = useState(true)
@@ -16,7 +16,7 @@ export default function SignUpForm({ setUser, showSignUp, setShowSignUp }){
     email: '',
     password: '',
     confirm: '',
-    userType: UserTypes.Hero,
+    userType: 'Hero',
     photoUrl: '',
     businessName: '',
     businessType: '',
@@ -34,18 +34,18 @@ export default function SignUpForm({ setUser, showSignUp, setShowSignUp }){
       [evt.target.name]: evt.target.value,
       error: ''
     });
-    console.log("this is the form data: ", formData)
+    console.log("this is the form data: ", formData);
   };
 
   const handleNext = () => {
-    setShowBusinessForm(!showBusinessForm)
+    setShowBusinessForm(!showBusinessForm);
   }
 
   const hungryClick = (evt) => {
     setFormData({
       ...formData,
-      userType: UserTypes.Hungry
-    })
+      userType: 'Hungry'
+    });
     handleSubmit(evt)
   }
 
