@@ -14,7 +14,7 @@ export default function HeroLandingPage() {
                         </div>
                     </div>
                     <div className='imgDiv'>
-                        <img className='img' src='./images/charity.jpg' alt='' />
+                        <img className='img' src='./images/charity2.png' alt='' />
                     </div>
                 </div>
                 <h1 className='sampleText'>These all can go a long way</h1>
