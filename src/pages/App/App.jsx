@@ -14,6 +14,7 @@ import FoodShowPage from '../FoodShowPage/FoodShowPage'
 import HeroLandingPage from '../HeroLandingPage/HeroLandingPage';
 import HeroRequestPage from '../HeroRequestPage/HeroRequestPage';
 import SplashPage from '../SplashPage/SplashPage';
+import AboutPage from '../AboutPage/AboutPage';
 
 export default function App() {
   const [user, setUser] = useState(getUser());
@@ -63,6 +64,8 @@ export default function App() {
               <Route path="/requests" element={<HeroRequestPage user={user} navigate={navigate}/>}/>
               
               <Route path="/splash" element={<SplashPage/>} />
+
+              <Route path="/about" element={<AboutPage />}/>
             </Routes>
             <Footer />
           </>

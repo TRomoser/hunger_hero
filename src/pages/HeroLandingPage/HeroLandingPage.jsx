@@ -10,7 +10,7 @@ export default function HeroLandingPage() {
                             <h1>Help make a difference with your donation</h1>
                             <h1>Help someone in need today</h1>
                             <br />
-                            <button className='learnBtn'>Learn More</button>
+                            <Link to="/about"><button className='learnBtn'>Learn More</button></Link>
                         </div>
                     </div>
                     <div className='imgDiv'>
