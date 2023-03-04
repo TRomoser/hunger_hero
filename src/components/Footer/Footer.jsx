@@ -11,7 +11,9 @@ export default function Footer() {
                 <Link to="/about">
                     <li className='link'>About</li>
                 </Link>
-                <li className='link'>Contact Us</li>
+                <Link to="/contact">
+                    <li className='link'>Contact Us</li>
+                </Link>
                 <li className='link'>Support</li>
             </ul>
         </div>

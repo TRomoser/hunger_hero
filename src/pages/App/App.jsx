@@ -15,6 +15,7 @@ import HeroLandingPage from '../HeroLandingPage/HeroLandingPage';
 import HeroRequestPage from '../HeroRequestPage/HeroRequestPage';
 import SplashPage from '../SplashPage/SplashPage';
 import AboutPage from '../AboutPage/AboutPage';
+import ContactPage from '../ContactPage/ContactPage';
 
 export default function App() {
   const [user, setUser] = useState(getUser());
@@ -66,6 +67,8 @@ export default function App() {
               <Route path="/splash" element={<SplashPage/>} />
 
               <Route path="/about" element={<AboutPage />}/>
+
+              <Route path="/contact" element={<ContactPage />} />
             </Routes>
             <Footer />
           </>
