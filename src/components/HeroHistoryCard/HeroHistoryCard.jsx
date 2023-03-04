@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import DeleteWarning from "../DeleteWarning/DeleteWarning";
 
 export default function HeroHistoryCard(props) {
-  const { id, name, quantity, availableTime, availableDate, address, foodType, phoneNumber, photoUrl, content } = props;
+  const { id, name, quantity, availableTime, availableDate, location, foodType, phoneNumber, photoUrl, content, handleDeleteFood } = props;
   const [modalHidden, setModalHidden] = useState(false);
   const navigate = useNavigate();
 
@@ -14,8 +14,7 @@ export default function HeroHistoryCard(props) {
 
   function handleDelete() {
     setModalHidden(!modalHidden);
-    console.log('cancel');
-    // TODO: add delete functionality
+    handleDeleteFood(props.id);
   }
 
   function showModal() {
@@ -28,15 +27,15 @@ export default function HeroHistoryCard(props) {
         <div className="hero-history-card__content">
           <div>
             <h4 className="hero-history-card__title">{name}</h4>
-            <p className="hero-history-card__address">{address}</p>
-            <p className="hero-history-card__food-type">{foodType}</p>
+            <p className="hero-history-card__address">{location}</p>
+            <p className="hero-history-card__quantity">{quantity}</p>
             <div className="hero-history-card__info-line">
               <span><i className="fa-regular fa-calendar-days"></i>{availableDate}</span>
               <span><i className='fa-regular fa-clock'></i>{availableTime}</span>
               <span><i className="fa-solid fa-phone"></i>{phoneNumber}</span>
             </div>
             <div className="action-buttons">
-              <div onClick={handlePostNav} className="btn btn-green">See Post</div>
+              <div onClick={(id) =>handlePostNav} className="btn btn-green">See Post</div>
               <div onClick={showModal} className="btn btn-black">Need to Cancel?</div>
             </div>
           </div>

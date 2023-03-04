@@ -28,6 +28,7 @@ This app was developed over a two-day hackathon by a team of four UX/UI designer
 - Node.js for the runtime environment
 - Amazon S3 for image storage and retrieval 
 - Tailwind and standard CSS for styling
+- Amazon S3 for storage and file hosting
 
 ## License
 This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
