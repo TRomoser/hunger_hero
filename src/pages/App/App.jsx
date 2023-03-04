@@ -5,7 +5,7 @@ import * as foodsAPI from '../../utilities/food-api';
 import './App.css';
 import AuthPage from '../AuthPage/AuthPage';
 import HeroPostPage from '../HeroPostPage/HeroPostPage';
-import HeroHomePage from '../HeroHomePage/HeroHomePage';
+import HomePage from '../HomePage/HomePage';
 import HeroPostsHistory from '../HeroPostsHistory/HeroPostsHistory';
 import NavBar from '../../components/NavBar/NavBar';
 import ProfilePage from '../ProfilePage/ProfilePage';
@@ -56,7 +56,7 @@ export default function App() {
 
               <Route path="/hero/posts" element={<HeroPostsHistory user={user} posts={posts} handleDeleteFood={handleDeleteFood} />} />
 
-              <Route path="/hero" element={<HeroHomePage user={user} post={posts} navigate={navigate}/>}/>
+              <Route path="/hero" element={<HomePage user={user} posts={posts} navigate={navigate}/>}/>
 
               <Route path="/post/:id" element={<FoodShowPage />} />
 
@@ -64,7 +64,7 @@ export default function App() {
               
               <Route path="/splash" element={<SplashPage/>} />
             </Routes>
-            <Footer />
+            {/* <Footer /> */}
           </>
           :
           <>

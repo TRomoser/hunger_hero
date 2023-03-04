@@ -27,6 +27,7 @@ This app was developed over a two-day hackathon by a team of four UX/UI designer
 - React for the frontend framework
 - Node.js for the runtime environment
 - Tailwind and standard CSS for styling
+- Amazon S3 for storage and file hosting
 
 ## License
 This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).

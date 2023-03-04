@@ -63,12 +63,16 @@ const PhotoUpload = (props) => {
 
 
   return (
-  <div className='mb-4'>
-      {/* <div>Native SDK File Upload Progress is {progress}%</div> */}
-      <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white" htmlFor="file_input">Upload Profile Picture</label>
-      <input className="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-white dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" aria-describedby="file_input_help" id="file_input" type="file" onChange={handleFileInput}/>
-      <p className="mt-1 text-sm text-gray-500 dark:text-gray-300" id="file_input_help">SVG, PNG, JPG or GIF (MAX. 800x400px).</p>
-      {/* <button onClick={() => uploadFile(selectedFile)}> Upload to S3</button> */}
+  <div className='file-input-container'>
+    {/* {formData.photoUrl !== '' ? 
+      <img src={formData.photoUrl} alt="" />
+      :
+      <> */}
+      
+      <label className="file-input-label" htmlFor="file_input"><i className="fa-solid fa-cloud-arrow-up"></i></label>
+      <input className="file-input" aria-describedby="file_input_help" id="file_input" type="file" onChange={handleFileInput}/>
+      <p className="file-input-text">SVG, PNG, JPG or GIF (MAX. 800x400px).</p>
+      {/* </>} */}
   </div>
   )
 }

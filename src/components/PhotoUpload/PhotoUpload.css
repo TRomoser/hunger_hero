@@ -1,21 +1,43 @@
-/* .file {
-	width: 0.1px;
-	height: 0.1px;
-	opacity: 0;
-	overflow: hidden;
-	position: absolute;
-	z-index: -1;
+.file-input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.file + label {
-  font-size: 1.25em;
-  font-weight: 700;
-  color: white;
-  background-color: black;
-  display: inline-block;
+label[for="file_input"] {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 340px;
+  height: 340px;
+  background: #FFFFFF;
+  border: 1px solid #6D6D6D;
+  box-shadow: 3px 7px 7px rgba(72, 72, 72, 0.25);
+  border-radius: 20px;
+  padding: 10px;
+  cursor: pointer;
 }
 
-.file:focus + label,
-.file + label:hover {
-  background-color: #5C9A57;
-} */
+/* Hide the input */
+#file_input {
+  display: none;
+}
+
+.photo-upload-icon {
+  font-size: 60px;
+  color: #ccc;
+  margin-bottom: 10px;
+}
+
+.file-input-text {
+  font-size: 14px;
+  color: #666;
+  margin-top: 10px;
+}
+
+.fa-cloud-arrow-up {
+  font-size: 130px;
+  color: #ccc;
+  margin-bottom: 10px;
+}
