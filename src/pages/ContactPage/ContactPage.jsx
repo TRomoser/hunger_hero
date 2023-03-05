@@ -2,7 +2,7 @@ import './ContactPage.css'
 
 export default function ContactPage() {
     return (
-        <div className="body">
+        <div className="contactBody">
             <div className="taylor">
                 <h2 className='name'><strong>Taylor Romoser</strong></h2>
                 <h2>Software Engineer</h2>
