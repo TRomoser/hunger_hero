@@ -1,4 +1,5 @@
 import './Footer.css';
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
     return (
@@ -7,8 +8,12 @@ export default function Footer() {
                 <img className='logoImg' src="../images/logo.png"/>
             </div>
             <ul className='footerLinks'>
-                <li className='link'>About</li>
-                <li className='link'>Contact Us</li>
+                <Link to="/about">
+                    <li className='link'>About</li>
+                </Link>
+                <Link to="/contact">
+                    <li className='link'>Contact Us</li>
+                </Link>
                 <li className='link'>Support</li>
             </ul>
         </div>
