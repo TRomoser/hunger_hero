@@ -102,7 +102,7 @@ export default function HeroForm(props) {
             {/* two inputs, availableTime and availableDate */}
             <div className="availability-container">
               <input className='availability-input input' type="date" name="availableDate" value={formData.availableDate} onChange={handleChange} required />
-              <label className='availability-label label' htmlFor='availableTime' >Pick-up Date</label>
+              <label className='availability-label label' htmlFor='availableTime' >Pick-up Time</label>
               <input className='availability-input input' type="time" name="availableTime" value={formData.availableTime} onChange={handleChange} required />
             </div>
             <button className='submit-button' type="submit">Add Food</button>
