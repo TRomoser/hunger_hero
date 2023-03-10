@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import DeleteWarning from "../DeleteWarning/DeleteWarning";
 
 export default function HeroHistoryCard(props) {
-  const { id, name, quantity, availableTime, availableDate, location, foodType, phoneNumber, photoUrl, content, handleDeleteFood } = props;
+  const { id, name, quantity, availableTime, availableDate, location, description, phoneNumber, photoUrl, content, handleDeleteFood } = props;
   const [modalHidden, setModalHidden] = useState(false);
   const navigate = useNavigate();
 
@@ -28,6 +28,7 @@ export default function HeroHistoryCard(props) {
           <div>
             <h4 className="hero-history-card__title">{name}</h4>
             <p className="hero-history-card__address">{location}</p>
+            <p className="hero-history-card__description">{description}</p>
             <p className="hero-history-card__quantity">{quantity}</p>
             <div className="hero-history-card__info-line">
               <span><i className="fa-regular fa-calendar-days"></i>{availableDate}</span>

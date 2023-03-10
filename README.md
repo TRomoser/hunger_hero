@@ -7,7 +7,7 @@ Hunger Hero is a MERN full CRUD app that aims to reduce food waste by connecting
 This app was developed over a two-day hackathon by a team of four UX/UI designers and four developers, including:
 
 - Christopher Villa
-- Dniko G
+- Dniko Green
 - Graem Krietzman
 - Greg Delgado
 - Chase Allman-Knieper
