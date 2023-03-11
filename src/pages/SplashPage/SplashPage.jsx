@@ -5,7 +5,7 @@ export default function SplashPage({ setShowSplash, showSplash }) {
   // the user has to press the button on the splash page to move onto the login/signup process
   // so this useEffect automatically renders the login after a certain time
   // unsure if we want to keep this
-  useEffect(() => {setTimeout(() => {setShowSplash(!showSplash)}, 7000)}, [])
+  useEffect(() => {setTimeout(() => {setShowSplash(!showSplash)}, 9000)}, [])
 
 
   return (
