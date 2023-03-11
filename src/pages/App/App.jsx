@@ -20,6 +20,7 @@ import ContactPage from '../ContactPage/ContactPage';
 export default function App() {
   const [user, setUser] = useState(getUser());
   const [posts, setPosts] = useState([])
+  const [showSplash, setShowSplash] = useState(true)
   const navigate = useNavigate()
 
   // API REQUEST ON COMPONENT MOUNT
@@ -82,8 +83,12 @@ export default function App() {
             <Footer />
           </>
           :
-          <AuthPage setUser={setUser} />
-          // <SplashPage/>
+          <>
+            {showSplash ? 
+            <SplashPage setShowSplash={setShowSplash} showSplash={showSplash} /> :
+            <AuthPage setUser={setUser} />
+            }
+          </>
       }
     </main>
   );
