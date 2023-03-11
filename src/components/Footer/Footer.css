@@ -1,6 +1,8 @@
 .footer {
     background-color: rgb(20, 20, 20);
     display: flex;
+    width: 100%;
+    top: 100%;
     bottom: 0;
 }
 
@@ -14,8 +16,14 @@
 .footerLinks {
     color: rgb(245, 245, 245);
     margin: 30px;
+    transition: ease-in-out .4s;
 }
 
 .link {
     padding: 5px;
+    transition: ease-in-out .4s;
+}
+
+.link:hover {
+    color: rgb(160, 210, 170); 
 }

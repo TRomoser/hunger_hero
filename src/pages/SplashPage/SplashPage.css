@@ -1,0 +1,72 @@
+.masthead {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  width: 100%;
+  height: 100vh; /* if you don't want it to take up the full screen, reduce this number */
+  overflow: hidden;
+  background-size: cover !important;
+  background: radial-gradient(ellipse at center, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 72%, rgba(0,0,0,0.65) 100%), url('https://images.unsplash.com/photo-1599059813005-11265ba4b4ce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80') no-repeat center center scroll;
+}
+
+.hero-title {
+  font-style: normal;
+  font-weight: bold;
+  color: #eee;
+  font-size: 11vmin;
+  letter-spacing: 0.03em;
+  line-height: 1;
+  text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.8);
+  margin-bottom: 77px;
+  animation: typing 2s steps(11), cursor .75s step-start infinite;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid white;
+  width: 11ch;
+}
+@keyframes typing {
+  from{
+    width: 0;
+  }
+}
+@keyframes cursor {
+  0% {
+    border-color: white;
+  }
+
+  50% {
+    border-color: transparent;
+  }
+
+  100% {
+    border-color: white;
+  }
+}
+      
+.hero-button {
+  background: #52894e;
+  transition: background ease .25s;
+  border-radius: 9px;
+  display: inline-block;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  margin: 0;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  text-align: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.hero-button:hover {
+  background: #7fbf7b
+}
+
+.hero-button:focus {
+  outline: 1px solid #fff;
+  outline-offset: -4px;
+}

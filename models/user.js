@@ -15,7 +15,7 @@ const userSchema = new Schema({
     type: String,
     required: true
   },
-  userType: {type: String, enum: ["Hungry", "Hero"] ,required: true },
+  userType: {type: String},
   businessName: {type: String},
   businessType: {type: String},
   photoUrl: {type: String},

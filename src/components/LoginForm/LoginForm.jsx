@@ -24,7 +24,7 @@ export default function LoginForm({ setUser, setShowSignUp }) {
       const user = await usersService.login(credentials);
       setUser(user);
     } catch {
-      setError('Log In Failed - Try Again');
+      setError('Invalid User Name or Password');
     }
   }
 
@@ -49,8 +49,8 @@ export default function LoginForm({ setUser, setShowSignUp }) {
             </div>
           </div>
           <div className='flex justify-between text-sm'>
-            <button className='font-medium text-grey-600 hover:text-indigo-50 underline mb-4' onClick={() => setShowSignUp(false)}>Don't have an account?</button>
-            <button className='font-medium text-grey-600 hover:text-indigo-50 underline mb-4' disabled>Forgot Password?</button>
+            <div className='font-medium text-grey-600 underline mb-4' onClick={() => setShowSignUp(false)}>Don't have an account?</div>
+            <div className='font-medium text-grey-600 underline mb-4' disabled>Forgot Password?</div>
           </div>
 
           <button className='group relative flex w-full justify-center rounded-md border border-transparent bg-green-500 py-2 px-4 text-sm font-medium text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2' type="submit">LOG IN</button>

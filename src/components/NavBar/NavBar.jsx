@@ -3,6 +3,7 @@ import * as userService from '../../utilities/users-service';
 import './NavBar.css';
 
 export default function NavBar({ user, setUser }) {
+  
   function handleLogOut() {
     userService.logOut();
     setUser(null);
@@ -11,13 +12,18 @@ export default function NavBar({ user, setUser }) {
   return (
     <nav className='navBar'>
       <div className='navLogo'>
-        <Link to="/"><img className='logoImg' src="./images/logo.png"/></Link>
+        <img className='logoImg' src="../../images/logo.png" alt='logo' / >
       </div>
-        <Link className='navLinks' to="/hero/create">New Post</Link>
+      <h2>Hunger Hero</h2>
+        <Link className='navLinks' to="/" >Home</Link>
+        &nbsp; | &nbsp;
+        <Link className='navLinks' to="/hero/posts">Your Posts</Link>
         &nbsp; | &nbsp;
         <Link className='navLinks' to="/hero">All Posts</Link>
         &nbsp; | &nbsp;
-        <Link className='navLinks' to="/profile">Profile</Link>
+        <Link className='navLinks' to="/requests" >Requests</Link>
+        &nbsp; | &nbsp;
+        <Link className='navLinks' to="/profile">My Account</Link>
         &nbsp;&nbsp;
         {/* <span>Welcome, {user.businessName}</span> */}
         &nbsp;&nbsp;<Link className='navLinks' to="" onClick={handleLogOut}>Log Out</Link>
