@@ -9,7 +9,7 @@ export default function SplashPage({ setShowSplash, showSplash }) {
 
 
   return (
-    <section class="masthead" role="img" aria-label="Image Description">
+    <section className="masthead" role="img" aria-label="Image Description">
       <h1 className="hero-title">
         Hunger Hero
       </h1>
