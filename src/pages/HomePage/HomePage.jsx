@@ -31,30 +31,28 @@ export default function HomePage({ user, navigate, posts }) {
       <p>Select from what's available in your area</p>
     </div>
     <div className="filter-container">
-      <label htmlFor="date-select">Date:</label>
-      <select id="date-select">
-        <option value="">All</option>
+      <h3>Filter:</h3>
+      <select className='filter' id="date-select">
+        <option value="" disabled selected>Date</option>
         <option value="today">Today</option>
         <option value="tomorrow">Tomorrow</option>
       </select>
-      <label htmlFor="time-select">Time:</label>
-      <select id="time-select">
-        <option value="">All</option>
+      <select className='filter' id="time-select">
+        <option value="" disabled selected>Time</option>
         <option value="morning">Morning</option>
         <option value="afternoon">Afternoon</option>
         <option value="evening">Evening</option>
       </select>
-      <label htmlFor="type-select">Type:</label>
-      <select id="type-select">
-        <option value="">All</option>
+      <select className='filter' id="type-select">
+        <option value="" disabled selected>Type</option>
         <option value="FreshProduce">Fresh Produce</option>
         <option value="Prepared Meals">Prepared Meals</option>
         <option value="Mixed">Mixed</option>
         <option value="ShelfStable">Shelf Stable</option>
         <option value="CannedFood">Canned Food</option>
       </select>
-      <label htmlFor="zipcode-input">Zip Code:</label>
-      <input type="text" id="zipcode-input" placeholder="Enter your zip code" />
+      <input className='filter' type="text" id="zipcode-input" placeholder="Zip Code" />
+      <button className='filter-btn'>Apply</button>
     </div>
     <hr />
     <div className="posts-container">
