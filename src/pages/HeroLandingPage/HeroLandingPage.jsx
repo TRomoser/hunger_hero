@@ -10,55 +10,40 @@ export default function HeroLandingPage() {
             <h1>Help make a difference with your donation</h1>
             <h1>Help someone in need today</h1>
             <br />
-            <Link to="/about">
-              <button className="learnBtn">Learn More</button>
-            </Link>
+            <button className="learnBtn">Learn More</button>
           </div>
         </div>
         <div className="imgDiv">
-          <img className="img" src="./images/charity2.png" alt="" />
+          <img className="img" src="./images/charity.jpg" />
         </div>
       </div>
       <h1 className="sampleText">These all can go a long way</h1>
       <div className="sampleItems">
-        <img src="./images/image1.png" alt="" />
-        <img src="./images/image2.png" alt="" />
-        <img src="./images/image.png" alt="" />
-        <img src="./images/image5.png" alt="" />
+        <img src="./images/image1.png" />
+        <img src="./images/image2.png" />
+        <img src="./images/image3.png" />
+        <img src="./images/image4.png" />
       </div>
       <h1 className="sampleText2">How you can help</h1>
       <div className="buttons">
         <div className="roundBtn">
           <Link to="/hero/create">
-            <img src="./images/icon3.png" alt="" />
-          </Link>
-        </div>
-        <div className="roundBtn">
-          <Link to="/requests">
-            <img src="./images/icon.png" alt="" />
+            <img src="./images/icon3.png" />
           </Link>
         </div>
         <div className="roundBtn">
           <Link>
-            <img src="./images/icon2.png" alt="" />
+            <img src="./images/icon.png" />
+          </Link>
+        </div>
+        <div className="roundBtn">
+          <Link>
+            <img src="./images/icon2.png" />
           </Link>
         </div>
       </div>
-      <div className="buttonsText">
-        <h2>Create a post</h2>
-        <h2>Accept pickup request</h2>
-        <h2>Donate goods</h2>
-      </div>
       <div className="facts">
-        <img className="factsImg" src="./images/factsImg.png" alt="" />
-        <h1 className="factsText">
-          Approximately one third of all food produced in the world is wasted
-          every year, amounting to approximately 1.3 billion tons. This food
-          waste contributes to resource depletion, greenhouse gas emissions, and
-          economic losses, as well as exacerbating global hunger and poverty.
-          Reducing food waste is an important part of addressing these
-          challenges and creating a more sustainable food system.
-        </h1>
+        <h1>facts</h1>
       </div>
     </div>
   );
