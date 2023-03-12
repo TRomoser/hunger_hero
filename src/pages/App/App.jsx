@@ -61,7 +61,7 @@ export default function App() {
 
               <Route path="/hero" element={<HomePage user={user} posts={posts} navigate={navigate}/>}/>
 
-              <Route path="/post/:id" element={<FoodShowPage />} />
+              <Route path="/hero/posts/:id" element={<FoodShowPage />} />
 
               <Route path="/requests" element={<HeroRequestPage user={user} navigate={navigate}/>}/>
               

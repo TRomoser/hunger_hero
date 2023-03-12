@@ -9,7 +9,8 @@ export default function HeroHistoryCard(props) {
   const navigate = useNavigate();
 
   function handlePostNav() {
-    navigate(`/hero/${id}`);
+    console.log(id)
+    navigate(`/hero/posts/${id}`);
   }
 
   function handleDelete() {
@@ -36,7 +37,7 @@ export default function HeroHistoryCard(props) {
               <span><i className="fa-solid fa-phone"></i>{phoneNumber}</span>
             </div>
             <div className="action-buttons">
-              <div onClick={(id) =>handlePostNav} className="btn btn-green">See Post</div>
+              <div onClick={() =>handlePostNav()} className="btn btn-green">See Post</div>
               <div onClick={showModal} className="btn btn-black">Need to Cancel?</div>
             </div>
           </div>
