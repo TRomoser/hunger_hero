@@ -55,6 +55,19 @@ export default function ContactPage() {
                     ><img className="icon" src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email"/> 
                 </a>
             </div>
+            <div className="dniko">
+                <h2 className='name'><strong>DNiko Green</strong></h2>
+                <h2>UX Designer</h2>
+                <a href="https://dnikogreen.wixsite.com/dgreen?fbclid=PAAaaoIcA8TnmsjIt4ojyXX3_GePq8N7ICjrmze2_c0uUVDIiRLwAp5DhQs5Y" target="_blank"><img className="icon" src="https://cdn-icons-png.flaticon.com/512/281/281089.png" alt="Portfolio"/></a>
+                <a href="https://www.linkedin.com/in/shneek" target="_blank"><img className="icon" src="https://cdn-icons-png.flaticon.com/512/61/61109.png" alt="LinkedIn"/></a>
+                <a
+                    rel="noreferrer"
+                    target="_blank"
+                    class="cta-btn cta-btn--resume"
+                    href="mailto:dniko.green@gmail.com"
+                    ><img className="icon" src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email"/> 
+                </a>
+            </div>
         </div>
     )
 }
