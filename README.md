@@ -2,7 +2,7 @@
 
 <img src="./public/images/logo.png" alt="HungerHeroLogo" width="150">
 
-Hunger Hero is a MERN full CRUD app that aims to reduce food waste by connecting businesses (such as restaurants, food trucks, and grocery stores) with organizations like food banks and soup kitchens to donate soon-to-expire food. 
+Hunger Hero is a MERN full CRUD app that aims to reduce food waste by connecting businesses (such as restaurants, food trucks, and grocery stores) with organizations like food banks and soup kitchens to donate soon-to-expire food!
 
 This app was developed over a two-day hackathon by a team of four UX/UI designers and four developers, including:
 
