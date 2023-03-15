@@ -36,19 +36,35 @@ const FoodShowPage = () => {
     }, [post])
 
     
-     
+    // const listItems = post.condition.map((el) => 
+    //     <li>{el}</li>
+    // )
 
 
 
 
 
     return(
-    <div>
+    <div className='body'>
 
         { post && owner ? 
         <>
         <h1>{post.name}</h1>
         <h1>{owner.email}</h1>
+        <h1>{post.quantity}</h1>
+        <h1>{post.description}</h1>
+        <h1>{post.description}</h1>
+        {/* <ul>
+            {listItems}
+        </ul> */}
+        <h1>{post.availableTime}</h1>
+        <h1>{post.availableDate}</h1>
+        <h1>{post.location}</h1>
+        <h1>{owner.businessName}</h1>
+        <h1>{owner.address}</h1>
+        <h1>{owner.city}</h1>
+        <h1>{owner.state}</h1>
+        <h1>{owner.zipCode}</h1>
         </>
         
         

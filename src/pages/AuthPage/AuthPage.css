@@ -1,3 +1,16 @@
+.authBody {
+    min-height: 100vh;
+    background-image: url('https://images.unsplash.com/photo-1572635148687-307f8ca9b737?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=928&q=80');
+    background-size: cover;
+    z-index: -1;
+}
+
+.blur {
+    min-height: 100vh;
+    min-width: 100vw;
+    backdrop-filter: contrast(150%) brightness(120%) blur(1px);
+}
+
 .heroCont {
     height: 500px;
     width: 100%;
