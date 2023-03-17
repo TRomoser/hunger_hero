@@ -16,6 +16,7 @@ import HeroRequestPage from "../HeroRequestPage/HeroRequestPage";
 import SplashPage from "../SplashPage/SplashPage";
 import AboutPage from "../AboutPage/AboutPage";
 import ContactPage from "../ContactPage/ContactPage";
+import HungryLandingPage from "../HungryLandingPage/HungryLandingPage";
 
 export default function App() {
   const [user, setUser] = useState(getUser());
@@ -88,7 +89,7 @@ export default function App() {
             <NavBar user={user} setUser={setUser} />
             <Routes>
               {/* Route components in here */}
-              {/* <Route path="/hungry" element={<HungryHomePage />} /> */}
+              <Route path="/" element={<HungryLandingPage />} />
             </Routes>
             <Footer />
           </>

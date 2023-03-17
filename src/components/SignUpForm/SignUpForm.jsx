@@ -41,13 +41,23 @@ export default function SignUpForm({ setUser, showSignUp, setShowSignUp }){
     setShowBusinessForm(!showBusinessForm);
   }
 
-  const hungryClick = (evt) => {
+  const hungryClick = async (evt) => {
+    evt.preventDefault();
+    // try {
+    //   const {name, email, password, userType} = formData
+    //   const data = {name, email, password, userType};
+    //   const user = await signUp(data)
+    //   setUser(user)
+    //   setFormData({...formData, userType: 'Hungry'})
+    // } catch {
+    //   setFormData({...formData, error: 'Sign Up Failed'})
+    // }
     setFormData({
       ...formData,
       userType: 'Hungry'
     });
     handleSubmit(evt)
-  }
+  };
 
   const handleSubmit = async (evt) => {
     console.log(formData, "THIS IS THE STATE")
