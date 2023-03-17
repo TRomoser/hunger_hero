@@ -49,7 +49,7 @@ export default function LoginForm({ setUser, setShowSignUp }) {
             </div>
           </div>
           <div className='flex justify-between text-sm'>
-            <div className='font-medium text-grey-600 underline mb-4' onClick={() => setShowSignUp(false)}>Don't have an account?</div>
+            <div className='font-medium text-grey-600 underline mb-4' id='switchForm' onClick={() => setShowSignUp(false)}>Don't have an account?</div>
             <div className='font-medium text-grey-600 underline mb-4' disabled>Forgot Password?</div>
           </div>
 

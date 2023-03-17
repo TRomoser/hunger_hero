@@ -104,7 +104,7 @@ export default function SignUpForm({ setUser, showSignUp, setShowSignUp }){
           }
         </form>
         <div className='flex justify-end text-sm'>
-          <div className='font-medium text-grey-600 hover:text-indigo-50 underline mb-4' onClick={() => setShowSignUp(true)}>Already have an account?</div>
+          <div className='font-medium text-grey-600 hover:text-indigo-50 underline mb-4' id='switchForm' onClick={() => setShowSignUp(true)}>Already have an account?</div>
         </div>
       </div>
     </div>
