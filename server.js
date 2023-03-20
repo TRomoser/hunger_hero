@@ -42,6 +42,11 @@ app.get('/*', function(req, res) {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
 });
 
-app.listen(port, function() {
+// app.listen(port, function() {
+//   console.log(`Express app running on port ${port}`);
+// });
+
+// potential fix for heroku deployment
+app.listen(process.env.PORT || 5000, function() {
   console.log(`Express app running on port ${port}`);
 });

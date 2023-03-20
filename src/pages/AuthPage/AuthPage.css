@@ -32,7 +32,7 @@
 .heroText {
     color: white;
     font-size: 30px;
-    margin: 50px;
+    margin: 50px 50px 55px 50px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -52,9 +52,10 @@
 }
 
 .btmBtn {
+
 }
+
 .mb-5 {
     font-family: 'Lato', sans-serif;
     font-size: 20;
 }
-

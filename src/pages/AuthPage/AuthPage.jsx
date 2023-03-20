@@ -9,7 +9,7 @@ export default function AuthPage({ setUser }) {
 
   return (
       <main className='authBody'>
-        <div class='blur'>
+        <div className='blur'>
           <div className='formCont'>
             <div className='heroCont'>
               <div className='heroText'>
