@@ -5,7 +5,7 @@ import PostCard from '../../components/PostCard/PostCard';
 import './HomePage.css'
 
 
-export default function HomePage({ user, navigate, posts }) {
+export default function HomePage({ user, navigate, posts, setPosts }) {
 
   //   const [posts, setPosts] = useState([])
 
@@ -23,6 +23,15 @@ export default function HomePage({ user, navigate, posts }) {
   // useEffect(() => {
   //     console.log(posts)
   // }, [posts])
+
+  // async function handleApply() {
+  //   const filteredPosts = posts.filter(post => post.name === '')
+  //   return (
+  //     <PostCard 
+  //     productItems ={productItems.filter(item => item.category.name === 'Mens')}
+  //     />
+  //   )
+  // }
 
   return (
     <div className='page-container'>

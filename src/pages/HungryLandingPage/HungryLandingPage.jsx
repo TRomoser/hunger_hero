@@ -9,7 +9,7 @@ export default function HeroLandingPage() {
           <div className="text">
             <h1>See what's available today</h1>
             <br />
-            <Link to="/about">
+            <Link to="/hero">
               <button className="learnBtn">Learn More</button>
             </Link>
           </div>
@@ -18,7 +18,7 @@ export default function HeroLandingPage() {
           <img className="img" src="./images/charity2.png" alt="" />
         </div>
       </div>
-      <h1 className="sampleText">These all can go a long way</h1>
+      <h1 className="sampleText">Available pickups</h1>
       <div className="sampleItems">
         <img src="./images/image1.png" alt="" />
         <img src="./images/image2.png" alt="" />
