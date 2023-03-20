@@ -17,7 +17,7 @@
   color: #eee;
   font-size: 11vmin;
   letter-spacing: 0.03em;
-  line-height: 1;
+  line-height: 1.5;
   text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.8);
   margin-bottom: 77px;
   animation: typing 2s steps(11), cursor .75s step-start infinite;
