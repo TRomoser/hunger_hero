@@ -55,6 +55,10 @@
   position: relative;
 }
 
+#clicked {
+  background-color: #7fbf7b;
+}
+
 .condition-label {
   display: block;
   padding: 5px 10px;

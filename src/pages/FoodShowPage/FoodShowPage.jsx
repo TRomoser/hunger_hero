@@ -8,7 +8,6 @@ const FoodShowPage = () => {
 
     const [post, setPost] = useState(null)
     const [owner, setOwner] = useState(null)
-    // const { id } = route.params
 
     const { id } = useParams()
 
@@ -23,19 +22,13 @@ const FoodShowPage = () => {
 
     useEffect(() => {
 
-        (async function() {
-         
+        (async function() {  
             // usersAPI.getAll()
             const food = await foodAPI.getFood(id)
             console.log("THIS IS THE FOOD", food)
             setPost(food)
 
         })();
-
-
-
-
-
     }, []) 
 
     useEffect(() => {

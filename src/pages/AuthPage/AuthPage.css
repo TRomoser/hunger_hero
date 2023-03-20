@@ -14,7 +14,7 @@
 .heroCont {
     height: 500px;
     width: 100%;
-    background: url('https://images.unsplash.com/photo-1584771145729-0bd9fda6529b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8Zm9vZCUyMGRyaXZlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=2000&q=60');
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1584771145729-0bd9fda6529b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8Zm9vZCUyMGRyaXZlfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=2000&q=60');
     background-size: cover;
     padding: 50px;
     display: flex;
@@ -30,17 +30,15 @@
 }
 
 .heroText {
-    background-color: rgb(20, 20, 20, 0.5);
     color: white;
     font-size: 30px;
-    margin: 50px;
+    margin: 50px 50px 55px 50px;
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: "Lato", sans-serif;
     border-radius: 10px;
     padding: 3%;
-    backdrop-filter: contrast(150%) brightness(120%) blur(5px);
 }
 
 .header {
@@ -54,9 +52,10 @@
 }
 
 .btmBtn {
+
 }
+
 .mb-5 {
     font-family: 'Lato', sans-serif;
     font-size: 20;
 }
-

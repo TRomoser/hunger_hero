@@ -1,4 +1,4 @@
-import "./HeroLandingPage.css";
+import './HungryLandingPage.css';
 import { Link } from "react-router-dom";
 
 export default function HeroLandingPage() {
@@ -7,8 +7,7 @@ export default function HeroLandingPage() {
       <div className="heroBanner">
         <div className="about">
           <div className="text">
-            <h1>Help make a difference with your donation</h1>
-            <h1>Help someone in need today</h1>
+            <h1>See what's available today</h1>
             <br />
             <Link to="/about">
               <button className="learnBtn">Learn More</button>

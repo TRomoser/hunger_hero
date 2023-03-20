@@ -41,12 +41,35 @@ export default function SignUpForm({ setUser, showSignUp, setShowSignUp }){
     setShowBusinessForm(!showBusinessForm);
   }
 
-  const hungryClick = (evt) => {
-    setFormData({
-      ...formData,
-      userType: 'Hungry'
-    });
-    handleSubmit(evt)
+  // const hungryClick = async (evt) => {
+  //   evt.preventDefault();
+    // try {
+    //   const {name, email, password, userType} = formData
+    //   const data = {name, email, password, userType};
+    //   const user = await signUp(data)
+    //   setUser(user)
+    //   setFormData({...formData, userType: 'Hungry'})
+    // } catch {
+    //   setFormData({...formData, error: 'Sign Up Failed'})
+    // }
+  //   setFormData({
+  //     ...formData,
+  //     userType: 'Hungry'
+  //   });
+  //   submitHungry()
+  // };
+
+  const submitHungry = async(evt) => {
+    evt.preventDefault();
+    try {
+      const {name, email, password, userType} = formData
+      const data = {name, email, password, userType: 'Hungry'};
+      const user = await signUp(data)
+      setUser(user)
+      // setFormData({...formData, userType: 'Hungry'})
+    } catch {
+      setFormData({...formData, error: 'Sign Up Failed'})
+    }
   }
 
   const handleSubmit = async (evt) => {
@@ -96,7 +119,7 @@ export default function SignUpForm({ setUser, showSignUp, setShowSignUp }){
             <br/>
             <div className="flex justify-center text-sm space-x-4">
               <button className="w-1/2 py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-green-500 hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-700" onClick={handleNext} disabled={disable}>Distributor</button>
-              <button type="submit" className="w-1/2 py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-green-500 hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-700" onClick={hungryClick} >Receiver</button>
+              <button type="submit" className="w-1/2 py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-green-500 hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-700" onClick={submitHungry} >Receiver</button>
             </div>
           </div>
           :
@@ -104,7 +127,7 @@ export default function SignUpForm({ setUser, showSignUp, setShowSignUp }){
           }
         </form>
         <div className='flex justify-end text-sm'>
-          <div className='font-medium text-grey-600 hover:text-indigo-50 underline mb-4' onClick={() => setShowSignUp(true)}>Already have an account?</div>
+          <div className='font-medium text-grey-600 hover:text-indigo-50 underline mb-4' id='switchForm' onClick={() => setShowSignUp(true)}>Already have an account?</div>
         </div>
       </div>
     </div>
