@@ -41,8 +41,8 @@ export default function SignUpForm({ setUser, showSignUp, setShowSignUp }){
     setShowBusinessForm(!showBusinessForm);
   }
 
-  const hungryClick = async (evt) => {
-    evt.preventDefault();
+  // const hungryClick = async (evt) => {
+  //   evt.preventDefault();
     // try {
     //   const {name, email, password, userType} = formData
     //   const data = {name, email, password, userType};
@@ -52,12 +52,25 @@ export default function SignUpForm({ setUser, showSignUp, setShowSignUp }){
     // } catch {
     //   setFormData({...formData, error: 'Sign Up Failed'})
     // }
-    setFormData({
-      ...formData,
-      userType: 'Hungry'
-    });
-    handleSubmit(evt)
-  };
+  //   setFormData({
+  //     ...formData,
+  //     userType: 'Hungry'
+  //   });
+  //   submitHungry()
+  // };
+
+  const submitHungry = async(evt) => {
+    evt.preventDefault();
+    try {
+      const {name, email, password, userType} = formData
+      const data = {name, email, password, userType: 'Hungry'};
+      const user = await signUp(data)
+      setUser(user)
+      // setFormData({...formData, userType: 'Hungry'})
+    } catch {
+      setFormData({...formData, error: 'Sign Up Failed'})
+    }
+  }
 
   const handleSubmit = async (evt) => {
     console.log(formData, "THIS IS THE STATE")
@@ -106,7 +119,7 @@ export default function SignUpForm({ setUser, showSignUp, setShowSignUp }){
             <br/>
             <div className="flex justify-center text-sm space-x-4">
               <button className="w-1/2 py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-green-500 hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-700" onClick={handleNext} disabled={disable}>Distributor</button>
-              <button type="submit" className="w-1/2 py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-green-500 hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-700" onClick={hungryClick} >Receiver</button>
+              <button type="submit" className="w-1/2 py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-green-500 hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-700" onClick={submitHungry} >Receiver</button>
             </div>
           </div>
           :

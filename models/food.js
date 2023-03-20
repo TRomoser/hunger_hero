@@ -5,7 +5,7 @@ const foodSchema = new Schema({
     name: {type: String, enum: ["Canned Food", "Fresh Produce", "Shelf Stable", "Prepared Meals", "Mixed"], required: true},
     quantity: {type: String, required: true, default: "unknown"},
     description: {type: String, required: true},
-    condition: {type: String, enum: ["Frozen", "Hot", "Perishable"]},
+    condition: {type: [String]},
     availableTime: {type: String},
     availableDate: {type: String},
     location: {type: String, required: true},
