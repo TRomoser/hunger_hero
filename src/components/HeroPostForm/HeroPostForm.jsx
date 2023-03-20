@@ -11,13 +11,20 @@ const FoodTypes = {
     Mixed: "Mixed"
   }
 
+const conditions = [
+  'Frozen',
+  'Hot',
+  'Perishable',
+]
+
 export default function HeroForm(props) {
   const { navigate } = props
+  const [isActive, setIsActive] = useState(false);
   const [formData, setFormData] = useState({
       name: FoodTypes.FreshProduce,
       quantity: '',
       description: '',
-      condition: '',
+      conditions: [],
       availableTime: '',
       availableDate: '',
       location: '',
@@ -25,13 +32,100 @@ export default function HeroForm(props) {
       error: ''
   })
 
-  const handleChange = (evt) => {
-      console.log(evt.target, "this is the event target")
+  const renderBtn = (condition) => {
+    if(condition === 'Frozen') {
+      return (
+        <div className='condition-input-container'>
+          {/* <label className='condition-label' id={isActive ? 'clicked': null} htmlFor="Frozen"> */}
+          <button
+            key={condition}
+            name='conditions'
+            value={condition}
+            type="button"
+            className="condition-label"
+            id={isActive ? 'clicked': 'notClicked'}
+            // className={buttonClasses(isSelected)}
+            onClick={(e) => handleToggle(e)}
+          >
+            <i className="fa-regular fa-snowflake"></i>
+            {condition}
+          </button>
+          {/* </label> */}
+        </div>
+      )
+    } else if(condition === 'Hot') {
+      return (
+        <div className='condition-input-container'>
+          {/* <label className='condition-label' id={isActive ? 'clicked': null} htmlFor="Hot"> */}
+          <button
+            key={condition}
+            name='conditions'
+            value={condition}
+            type="button"
+            className="condition-label"
+            id={isActive ? 'clicked': 'notClicked'}
+            // className={buttonClasses(isSelected)}
+            onClick={(e) => handleToggle(e)}
+          >
+            <i className="fa-solid fa-temperature-arrow-up"></i>
+            {condition}
+          </button>
+          {/* </label> */}
+        </div>
+      )
+    } else if(condition === 'Perishable') {
+      return (
+        <div className='condition-input-container'>
+          {/* <label className='condition-label' id={isActive ? 'clicked': null} htmlFor="Perishable"> */}
+          <button
+            key={condition}
+            name='conditions'
+            value={condition}
+            type="button"
+            className="condition-label"
+            id={isActive ? 'clicked': 'notClicked'}
+            // className={buttonClasses(isSelected)}
+            onClick={(e) => handleToggle(e) }
+          >
+            <i className="fa-regular fa-trash-can"></i>
+            {condition}
+          </button>
+          {/* </label> */}
+        </div>
+      )
+    }
+  }
+
+const handleChange = (evt) => {
       setFormData({...formData,
         [evt.target.name]: evt.target.value,
         error: ''
       });
-      console.log(formData, "this is the formData")
+}
+
+  const handleToggle = (e) => {
+    // old code
+      // console.log(evt.target, "this is the event target")
+      // setFormData({...formData,
+      //   [evt.target.name]: evt.target.value,
+      //   error: ''
+      // });
+      // console.log(formData, "this is the formData")
+      // e.preventDefault();
+    // new code
+      console.log(e.target)
+      setIsActive(!isActive);
+      const tmpData = {...formData};
+      // conditional chaining
+      const idx = tmpData?.conditions?.indexOf(e.target.value);
+      if(idx != -1 || idx === null) {    // found at idx
+          tmpData[e.target.name].splice(idx,1);
+      } else {    // not found
+          console.log({tmpData})
+          tmpData[e.target.name].push(e.target.value);
+      }
+      console.log({tmpData}, e.target.name);
+      setFormData(tmpData)
   };
 
   const handleSubmit = async (evt) => {
@@ -74,13 +168,28 @@ export default function HeroForm(props) {
             <input className='quantity-input input' type="text" name="quantity" value={formData.quantity} onChange={handleChange} required />
             <label htmlFor="">Select All That Apply</label>
             <div className='condition-container'>
-              <div className='condition-input-container'>
-                  <input className='condition-input' id='Frozen' type="radio" name="condition" value="Frozen" onChange={handleChange} />
-                <label className='condition-label' htmlFor="Frozen">
-                  <i className="fa-regular fa-snowflake"></i>
-                  Frozen
-                </label>
-              </div>
+              {conditions.map((condition) => 
+                renderBtn(condition)
+                      // <button
+                      //   key={condition}
+                      //   name='conditions'
+                      //   value={condition}
+                      //   type="button"
+                      //   // className={buttonClasses(isSelected)}
+                      //   onClick={(e) => handleChange(e)}
+                      // >
+                      //   {condition}
+                      // </button>
+                    )}
+              {/* <button >
+                <div className='condition-input-container'>
+                    <input className='condition-input' id='Frozen' type="radio" name="condition" value="Frozen" onChange={handleChange} />
+                  <label className='condition-label' htmlFor="Frozen">
+                    <i className="fa-regular fa-snowflake"></i>
+                    Frozen
+                  </label>
+                </div>
+              </button>
               <div className='condition-input-container'>
                   <input className='condition-input' id='Hot' type="radio" name="condition" value="Hot" onChange={handleChange} />
                 <label className='condition-label' htmlFor="Hot">
@@ -94,7 +203,7 @@ export default function HeroForm(props) {
                   <i className="fa-regular fa-trash-can"></i>
                   Perishable
                 </label>
-              </div>
+              </div> */}
             </div>
             <label className='location-label label' htmlFor='location' >Pick-up Location</label>
             <input className='location-input input' type="text" name="location" value={formData.location} onChange={handleChange} required />
