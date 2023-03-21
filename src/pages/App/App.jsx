@@ -69,7 +69,7 @@ export default function App() {
               <Route
                 path="/hero"
                 element={
-                  <HomePage user={user} posts={posts} navigate={navigate} />
+                  <HomePage user={user} posts={posts} setPosts={setPosts} navigate={navigate} />
                 }
               />
               <Route path="/post/:id" element={<FoodShowPage />} />
@@ -90,6 +90,13 @@ export default function App() {
             <Routes>
               {/* Route components in here */}
               <Route path="/" element={<HungryLandingPage />} />
+              <Route
+                  path="/hero"
+                  element={
+                    <HomePage user={user} posts={posts} setPosts={setPosts} navigate={navigate} />
+                  }
+              />
+              <Route path="/profile" element={<ProfilePage user={user} />} />
             </Routes>
             <Footer />
           </>
